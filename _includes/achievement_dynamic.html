@@ -1,0 +1,14 @@
+{% for company in site.data.achievement_companies %}
+  {% assign data_key = "achievement_" | append: company.key %}
+  {% assign projects = site.data[data_key] %}
+  {% if projects and projects.size > 0 %}
+  <div class="row g-5 mb-5">
+    <div>
+      <h3 class="fw-bold border-bottom pb-3 mb-5" style="color: {{ company.color }};">{{ company.display_name }}</h3>
+      {% for project in projects %}
+        {% include {{ project.layout | default: 'left' | append: ".html" }} item = project %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+{% endfor %}

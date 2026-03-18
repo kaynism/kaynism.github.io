@@ -1,9 +1,19 @@
 list:
+  - name: '플레이스앤'
+    experience:
+      - range: '2025. 08 ~ '
+        department: '나우웨이팅파트'
+    description: 'Backend Engineer'
+    position: '매니저'
+    work:
+      - '나우웨이팅 서비스 백엔드 개발(Ruby, Java/Kotlin)'
+    company: 'https://www.placen.kr/'
+
   - name: '퍼플아이오'
     experience:
-      - range: '2025. 02 ~ '
+      - range: '2025. 02 ~ 2025. 09'
         department: '서비스플랫폼팀 CRM Part (겸직, 통합쿠폰 개발)'
-      - range: '2024. 07 ~ '
+      - range: '2024. 07 ~ 2025. 09'
         department: '신사업개발팀 캠페인스쿼드'
     description: 'Backend Engineer'
     position: '매니저'

@@ -51,7 +51,19 @@
             flex-direction: column;
         }
         
+        .project-title {
+            text-align: center;
+            font-size: 1.25rem;
+            font-style: italic;
+            text-decoration: underline;
+            margin: 16px 0 8px;
+        }
+
         @media print {
+            @page {
+                margin: 10mm 10mm;
+                size: A4;
+            }
             .page-break {
                 page-break-before: always;
                 margin-top: 0;
@@ -62,18 +74,28 @@
             body {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+                font-size: 12px;
             }
             * {
                 -webkit-print-color-adjust: exact !important;
                 color-adjust: exact !important;
             }
-
-            /*!* 페이지 브레이크 후 첫 번째 요소의 상단 여백 제거 *!*/
-            /*.page-break + h3 {*/
-            /*    margin-top: 0 !important;*/
-            /*    padding-top: 0 !important;*/
-            /*}*/
-
+            h3, h4, h5 {
+                page-break-inside: avoid;
+                page-break-after: avoid;
+            }
+            ul, ol {
+                page-break-inside: avoid;
+            }
+            .grid-container {
+                margin-bottom: 5px;
+            }
+            .project-title {
+                margin: 8px 0 4px;
+            }
+            h5.fw-bold.mt-4 {
+                margin-top: 0.5rem !important;
+            }
         }
     </style>
 </head>
@@ -82,8 +104,8 @@
     <!-- header -->
     <header class="d-flex flex-column flex-md-row justify-content-center align-items-center pb-0 mb-3 border-bottom">
         <div class="text-center">
-            <span class="fs-4 fw-bold d-block">정현관(Hyunkwan Jeong)</span>
-            <span class="d-block">Software Engineer</span>
+            <span class="fs-4 fw-bold d-block">{{ site.title }}</span>
+            <span class="d-block">{{ site.description }}</span>
         </div>
         <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto no-print"></nav>
     </header>
@@ -93,45 +115,23 @@
     <div class="row g-0 mb-0">
         <div class="col-12">
             <h3 class="fw-bold">About Me</h3>
-
             <div class="col-12">
-                <img style="border-radius: 10px;" src="{{ site.github.url }}/assets/img/gitio_new.jpeg" alt="Home" width="40%" align="right">
+                <img style="border-radius: 10px;" src="{{ site.github.url }}/assets/img/gitio_new.jpeg" alt="Home" width="30%" align="right">
             </div>
-
-<!--            <h4 id="software-engineer"><code class="language-plaintext highlighter-rouge">Software Engineer</code></h4>-->
-            <br/>
-            <h6 id="e-commerce-장비-제어-주차유도-솔루션">e-commerce, 장비 제어, 주차유도 솔루션,</h6>
-            <h6 id="대용량-데이터-수집-캠페인등의-시스템을-개발했습니다">대용량 데이터 수집, 캠페인, 쿠폰등의 시스템을 개발했습니다.</h6>
-
-            <h6 id="-일이-왜-필요한지를-생각하고"><br/> 일이 '왜' 필요한지를 생각하고,</h6>
-            <h6 id="쉬운-길-보다는-올바른-길을-가려고-노력합니다">쉬운 길 보다는 올바른 길을 가려고 노력합니다.</h6>
-            <h6 id="공유와-협업을-중요시하며-회고를-즐기고-있습니다">공유와 협업을 중요시하며 회고를 즐기고 있습니다.</h6>
-            <h6 id="즐겁게-일하는-사람-함께-일하고-싶은-사람이-되고-싶습니다">즐겁게 일하는 사람, 함께 일하고 싶은 사람이 되고 싶습니다.</h6>
-
-            <p style="margin-top: 20px;">
+            <h6>e-commerce, 장비 제어, 주차유도 솔루션, 대용량 데이터 수집, 캠페인, 쿠폰등의 시스템을 개발했습니다.</h6>
+            <h6>일이 '왜' 필요한지를 생각하고, 쉬운 길 보다는 올바른 길을 가려고 노력합니다.</h6>
+            <h6>공유와 협업을 중요시하며 회고를 즐기고 있습니다.</h6>
+            <p style="margin-top: 10px; margin-bottom: 5px;">
                 <span style="color:white; background-color:darkcyan; font-size:80%">
-                    <i>
-                        ps. 컴퓨터가 대신할 수 있는 일은 모두 자동화하고,<br/>
-                        <span style="padding-left: 20px;">사람만이 할 수 있는 고민과 협업에 더 많은 시간을 쓰고 싶습니다.</span><br/>
-                    </i>
+                    <i>ps. 컴퓨터가 대신할 수 있는 일은 모두 자동화하고, 사람만이 할 수 있는 고민과 협업에 더 많은 시간을 쓰고 싶습니다.</i>
                 </span>
             </p>
-
-            <h6 id="portfolio"><code class="language-plaintext highlighter-rouge">Portfolio</code></h6>
-            <ul>
-                <li><a href="https://kwan1989.github.io"><em>https://kwan1989.github.io</em></a></li>
-            </ul>
-
-            <h6 id="github"><code class="language-plaintext highlighter-rouge">Github</code></h6>
-            <ul>
-                <li><a href="https://github.com/kwan1989"><em>https://github.com/kwan1989</em></a></li>
-            </ul>
-
-            <h6 id="email"><code class="language-plaintext highlighter-rouge">Email</code></h6>
-            <ul>
-                <li><a href="jhg728@naver.com"><em>jhg728@naver.com</em></a></li>
-            </ul>
-
+            <h6><code>Portfolio</code></h6>
+            <ul style="margin-top: -5px; margin-bottom: 3px;"><li><a href="https://kaynism.github.io"><em>https://kaynism.github.io</em></a></li></ul>
+            <h6><code>Github</code></h6>
+            <ul style="margin-top: -5px; margin-bottom: 3px;"><li><a href="https://github.com/kaynism"><em>https://github.com/kaynism</em></a></li></ul>
+            <h6><code>Email</code></h6>
+            <ul style="margin-top: -5px; margin-bottom: 3px;"><li><a href="jhg728@naver.com"><em>jhg728@naver.com</em></a></li></ul>
         </div>
     </div>
 
@@ -175,184 +175,64 @@
     </div>
     {% endfor %}
 
-    <!-- 주요 성과 - 퍼플아이오 -->
-    <div class="page-break"></div>
-    <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: purple;">Achievement - 퍼플아이오</h3>
+    <!-- 주요 성과 (동적 로딩) -->
+    {% for company in site.data.achievement_companies %}
+      {% assign data_key = "achievement_" | append: company.key %}
+      {% assign projects = site.data[data_key] %}
+      {% if projects and projects.size > 0 %}
 
-    {% for project in site.data.achievement_purpleio %}
-    {% unless forloop.first %}
-    <div class="page-break"></div>
-    <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: purple;">Achievement - 퍼플아이오</h3>
-    {% endunless %}
+        {% for project in projects %}
+          {% assign project_index = forloop.index0 %}
 
-    <div class="row g-1 mb-5">
-        <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-            <h4><font size="5"><u><i>{{ project.name }}</i></u></font></h4>
-        </div>
-        {% if project.link %}
-        <p style="display: flex; justify-content: center; align-items: center; margin-top: 0;">
-            <a href="{{ project.link }}" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a>
-        </p>
-        {% endif %}
+          {% if company.projects_per_page == 2 %}
+            {% assign position_in_page = project_index | modulo: 2 %}
+            {% assign remaining = forloop.length | minus: project_index %}
+            {% if position_in_page == 0 and remaining != 1 %}
+              <div class="page-break"></div>
+              <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: {{ company.color }};">{{ company.display_name }}</h3>
+            {% elsif position_in_page == 0 and remaining == 1 %}
+              <!-- 마지막 1개는 이전 페이지에 합침 -->
+            {% endif %}
+          {% else %}
+            <div class="page-break"></div>
+            <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: {{ company.color }};">{{ company.display_name }}</h3>
+          {% endif %}
 
-        <div class="col-md-10" style="margin-top: 10px;">
-            {% if project.description %}
-            <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
-            {{ project.description | strip | markdownify }}
+          <div class="row g-1 mb-{% if company.projects_per_page == 2 %}3{% else %}5{% endif %}">
+            <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+              <h4 class="project-title">{{ project.name }}</h4>
+            </div>
+            {% if project.link %}
+            <p style="display: flex; justify-content: center; align-items: center; margin-top: 0;">
+              <a href="{{ project.link }}" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a>
+            </p>
             {% endif %}
 
-        {% if project.achievements %}
-            <h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
-            {{ project.achievements | strip | markdownify }}
-        {% endif %}
+            <div class="col-md-10" style="margin-top: 10px;">
+              {% if project.description %}
+                <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
+                {{ project.description | strip | markdownify }}
+              {% endif %}
 
-        {% if project.troubleshooting %}
-            <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
-            {{ project.troubleshooting | strip | markdownify }}
-        {% endif %}
+              {% if project.achievements %}
+                <h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
+                {{ project.achievements | strip | markdownify }}
+              {% endif %}
 
-        {% if project.version %}
-            <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
-            {{ project.version | strip | markdownify }}
-        {% endif %}
-    </div>
-</div>
-{% endfor %}
+              {% if project.troubleshooting %}
+                <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
+                {{ project.troubleshooting | strip | markdownify }}
+              {% endif %}
 
-    <!-- 주요 성과 - 위메프 -->
-    <div class="page-break"></div>
-    <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: red;">Achievement - 위메프</h3>
+              {% if project.version %}
+                <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+                {{ project.version | strip | markdownify }}
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
 
-    {% for project in site.data.achievement_wmp %}
-    {% unless forloop.first %}
-    <div class="page-break"></div>
-    <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: red;">Achievement - 위메프</h3>
-    {% endunless %}
-
-    <div class="row g-1 mb-5">
-        <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-            <h4><font size="5"><u><i>{{ project.name }}</i></u></font></h4>
-        </div>
-        {% if project.link %}
-        <p style="display: flex; justify-content: center; align-items: center; margin-top: 0;">
-            <a href="{{ project.link }}" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a>
-        </p>
-        {% endif %}
-
-        <div class="col-md-10" style="margin-top: 10px;">
-            {% if project.description %}
-            <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
-            {{ project.description | strip | markdownify }}
-            {% endif %}
-
-        {% if project.achievements %}
-            <h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
-            {{ project.achievements | strip | markdownify }}
-        {% endif %}
-
-        {% if project.troubleshooting %}
-            <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
-            {{ project.troubleshooting | strip | markdownify }}
-        {% endif %}
-
-        {% if project.version %}
-            <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
-            {{ project.version | strip | markdownify }}
-        {% endif %}
-    </div>
-</div>
-{% endfor %}
-
-    <!-- 주요 성과 - 프레시코드 -->
-    <div class="page-break"></div>
-    <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: green;">Achievement - FreshCode</h3>
-
-    {% for project in site.data.achievement_freshcode %}
-    {% unless forloop.first %}
-    <div class="page-break"></div>
-    <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: green;">Achievement - FreshCode</h3>
-    {% endunless %}
-
-    <div class="row g-1 mb-5">
-        <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-            <h4><font size="5"><u><i>{{ project.name }}</i></u></font></h4>
-        </div>
-        {% if project.link %}
-        <p style="display: flex; justify-content: center; align-items: center; margin-top: 0;">
-            <a href="{{ project.link }}" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a>
-        </p>
-        {% endif %}
-
-        <div class="col-md-10" style="margin-top: 10px;">
-            {% if project.description %}
-            <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
-            {{ project.description | strip | markdownify }}
-            {% endif %}
-        
-        {% if project.achievements %}
-            <h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
-            {{ project.achievements | strip | markdownify }}
-        {% endif %}
-        
-        {% if project.troubleshooting %}
-            <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
-            {{ project.troubleshooting | strip | markdownify }}
-        {% endif %}
-        
-        {% if project.version %}
-            <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
-            {{ project.version | strip | markdownify }}
-        {% endif %}
-    </div>
-    </div>
-    {% endfor %}
-
-    <!-- 주요 성과 - 넥스파시스템 -->
-    <div class="page-break"></div>
-    <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: blue;">Achievement - Nexpa System</h3>
-    
-    {% for project in site.data.achievement_nexpa %}
-    {% assign project_index = forloop.index0 %}
-    {% assign page_number = project_index | divided_by: 2 %}
-    {% assign position_in_page = project_index | modulo: 2 %}
-
-    {% if position_in_page == 0 and project_index > 0 %}
-    <div class="page-break"></div>
-    <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: blue;">Achievement - Nexpa System</h3>
-    {% endif %}
-
-    <div class="row g-1 mb-3">
-        <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-            <h4><font size="5"><u><i>{{ project.name }}</i></u></font></h4>
-        </div>
-        {% if project.link %}
-        <p style="display: flex; justify-content: center; align-items: center; margin-top: 0;">
-            <a href="{{ project.link }}" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a>
-        </p>
-        {% endif %}
-        
-        <div class="col-md-10" style="margin-top: 10px;">
-            {% if project.description %}
-            <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
-            {{ project.description | strip | markdownify }}
-            {% endif %}
-            
-            {% if project.achievements %}
-            <h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
-            {{ project.achievements | strip | markdownify }}
-            {% endif %}
-            
-            {% if project.troubleshooting %}
-            <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
-            {{ project.troubleshooting | strip | markdownify }}
-            {% endif %}
-            
-            {% if project.version %}
-            <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
-            {{ project.version | strip | markdownify }}
-            {% endif %}
-        </div>
-    </div>
+      {% endif %}
     {% endfor %}
 
 

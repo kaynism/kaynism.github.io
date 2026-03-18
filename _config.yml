@@ -5,7 +5,7 @@ description: "Software Engineer"
 
 
 ## Site
-repository: kwan1989/kwan1989.github.io
+repository: kaynism/kaynism.github.io
 #favicon: images/favicon.ico
 #
 ## Content configuration version
@@ -14,7 +14,7 @@ repository: kwan1989/kwan1989.github.io
 ## Personal info
 #name: 정현관
 #email: jhg728@naver.co.kr
-#website: https://github.com/kwan1989
+#website: https://github.com/kaynism
 #
 ## Dark Mode (true/false/never)
 #darkmode: true
@@ -25,5 +25,5 @@ repository: kwan1989/kwan1989.github.io
 #website: https://jojoldu.tistory.com
 #url: https://jojoldu.tistory.com
 #baseurl: https://jojoldu.tistory.com
-#github_username:  kwan1989
+#github_username:  kaynism
 # dribbble_username: jekyll

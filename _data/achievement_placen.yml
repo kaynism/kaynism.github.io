@@ -1,0 +1,57 @@
+- layout: left
+  name: 물류웨이팅
+  description: |
+    * 기존 나우웨이팅(F&B 매장 웨이팅) 서비스를 물류센터(쿠팡물류센터 등) 향으로 도메인 확장
+    * 물류 도메인 모델링: Logistics(물류 예약), Dock(도크/하차점), Line(물류 라인) 엔티티 설계
+    * 도크 배정/해제, 라인별 온도 구분(상온/냉동/냉장), 차량번호 기반 웨이팅 관리
+    * 기존 mmm 프로젝트에서 smart-dock 브랜치로 물류 전용 기능 분리 개발
+  achievements: |
+    * **물류 도메인 신규 모델링**: <b>DDD 기반 Aggregate 설계 (Logistics → Dock/Line/Waiting 연관관계)</b>
+    * **CQRS 패턴 적용**: <b>Command/Query 서비스 분리, 조회 시 readOnly 트랜잭션으로 성능 최적화</b>
+    * **이벤트 기반 아키텍처**: <b>TransactionalEventListener로 Waiting↔Logistics 도메인 간 느슨한 결합 실현</b>
+    * **ValidatorFactory 패턴**: <b>도크 배정 검증(상태, 중복, 라인 일치)을 Validator로 캡슐화하여 SRP 준수</b>
+    * **QueryDSL 동적 쿼리 최적화**: <b>JOIN FETCH로 N+1 완전 차단, BooleanExpression 기반 동적 필터링</b>
+    * **도메인 예외 체계화**: <b>12개 Custom Exception으로 물류 도메인 의도 명확화 (DockClosed, DockLineMismatch 등)</b>
+  troubleshooting: |
+    * **도크 배정 시 도메인 불변식 위반**
+      - 문제: 도크 상태(CLOSED/PAUSED)나 라인 불일치 시에도 배정이 가능한 상황
+      - 해결: DockValidator에 5가지 검증 로직 캡슐화 (상태, 중복, 라인 일치, 반납 가능 여부)
+    * **Waiting↔Logistics 도메인 간 강결합**
+      - 문제: Waiting 생성 시 Logistics 직접 참조로 순환 의존 발생
+      - 해결: Spring ApplicationEventPublisher + TransactionalEventListener(BEFORE_COMMIT)로 이벤트 기반 통신 전환
+    * **물류 목록 조회 성능**
+      - 문제: Logistics 조회 시 Line, Dock, Waiting 연관관계에서 N+1 쿼리 다수 발생
+      - 해결: QueryDSL innerJoin().fetchJoin() 4개 조인 + PageableExecutionUtils로 count 쿼리 분리
+  version: |
+    * Java Version : <b>17</b>
+    * Spring Boot Version : <b>3.1.3 RELEASE</b>
+    * ETC. : <b>Java, Spring Data JPA, QueryDSL 5.0, Redisson 3.34, MapStruct 1.5.5, Spring Kafka, PostgreSQL, TestContainers, Fixture Monkey, JaCoCo, SonarQube</b>
+
+- layout: left
+  name: 네이버 커넥트주문
+  description: |
+    * 네이버와 포스사를 연결하는 커넥트주문 화이트라벨 플랫폼 백엔드 개발
+    * 6개 마이크로서비스 모듈 기반 멀티모듈 아키텍처 설계 및 구현 (Gateway, Integration, CEO Admin, Super Admin, POS Admin, POS Open API)
+    * JWT 기반 멀티 사용자 인증/인가 시스템 구축 (B2C, CEO Admin, POS Admin, SuperAdmin)
+    * QR 코드 기반 테이블 주문 시스템 (ShortenUrl → OrderDestination → OrderGroup → Order)
+  achievements: |
+    * **멀티모듈 마이크로서비스 아키텍처 설계**: <b>6개 서비스 모듈 + 공통 모듈, Spring Cloud Gateway 기반 단일 진입점</b>
+    * **CQRS 패턴 적용**: <b>Command/Query 분리로 읽기/쓰기 최적화, Master/Slave DB 분리</b>
+    * **전략 패턴 기반 다형 인증 시스템**: <b>AuthStrategy 인터페이스로 4가지 사용자 유형별 인증 로직 분리 (OCP 준수)</b>
+    * **분산 락 구현**: <b>Redis(Redisson) AOP 기반 선언적 분산 락으로 동일 테이블 동시 주문 Race Condition 방지</b>
+    * **Naver OAuth2 통합**: <b>CEO Admin 네이버 로그인 연동, Authorization Code 흐름 구현</b>
+    * **Refresh Token Rotation**: <b>Redis 기반 Refresh Token 저장 + HttpOnly 쿠키 + Token Rotation으로 보안 강화</b>
+    * **DB 스키마 자동화**: <b>Flyway 기반 45개 마이그레이션 버전 관리</b>
+  troubleshooting: |
+    * **동시 주문 Race Condition**
+      - 문제: 동일 테이블에 동시 주문 시 OrderGroup 중복 생성
+      - 해결: Redis 분산 락(Redisson) AOP 기반 @DistributedLock으로 동시성 제어
+    * **멀티 사용자 유형 인증 복잡성**
+      - 문제: B2C, CEO/POS Admin, SuperAdmin 각각 다른 인증 흐름
+      - 해결: Strategy Pattern + AuthStrategy 인터페이스 4개 구체 전략으로 OCP 준수
+  version: |
+    * Kotlin Version : <b>2.2.21</b>
+    * Spring Boot Version : <b>4.0.1 RELEASE</b>
+    * Spring Cloud Version : <b>2025.1.0</b>
+    * Gradle Version : <b>9.2.1</b>
+    * ETC. : <b>Kotlin, Spring Cloud Gateway, Spring Data JPA, Spring Cloud OpenFeign, QueryDSL 7.0, Flyway 11.19, Redis(Redisson 3.52), JWT(JJWT), PostgreSQL, AWS(ECR, S3, SES), Kotest, TestContainers, FixtureMonkey, Docker</b>

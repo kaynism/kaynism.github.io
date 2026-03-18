@@ -1,0 +1,24 @@
+- key: placen
+  display_name: "Achievement - 플레이스앤(나우웨이팅)"
+  color: "mediumseagreen"
+  projects_per_page: 1
+
+- key: purpleio
+  display_name: "Achievement - 퍼플아이오"
+  color: "purple"
+  projects_per_page: 1
+
+- key: wmp
+  display_name: "Achievement - 위메프"
+  color: "red"
+  projects_per_page: 1
+
+- key: freshcode
+  display_name: "Achievement - FreshCode"
+  color: "green"
+  projects_per_page: 1
+
+- key: nexpa
+  display_name: "Achievement - Nexpa System"
+  color: "blue"
+  projects_per_page: 2

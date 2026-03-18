@@ -22,7 +22,7 @@ title: "Software Engineer"
     </span>
 
 ##### `Github`
-* <a href="https://github.com/kwan1989">_https://github.com/kwan1989_</a>
+* <a href="https://github.com/kaynism">_https://github.com/kaynism_</a>
 
 ##### `Email`
 * <a href="jhg728@naver.com">_jhg728@naver.com_</a>
@@ -32,5 +32,5 @@ title: "Software Engineer"
 * _010-9724-0728_
 
 ##### `Linkedin`
-* <a href="https://www.linkedin.com/in/kwan1989">_https://www.linkedin.com/in/kwan1989_</a>
+* <a href="https://www.linkedin.com/in/kaynism">_https://www.linkedin.com/in/kaynism_</a>
 
