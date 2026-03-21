@@ -51,7 +51,19 @@
             flex-direction: column;
         }
         
+        .project-title {
+            text-align: center;
+            font-size: 1.25rem;
+            font-style: italic;
+            text-decoration: underline;
+            margin: 16px 0 8px;
+        }
+
         @media print {
+            @page {
+                margin: 10mm 10mm;
+                size: A4;
+            }
             .page-break {
                 page-break-before: always;
                 margin-top: 0;
@@ -62,18 +74,28 @@
             body {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+                font-size: 12px;
             }
             * {
                 -webkit-print-color-adjust: exact !important;
                 color-adjust: exact !important;
             }
-
-            /*!* 페이지 브레이크 후 첫 번째 요소의 상단 여백 제거 *!*/
-            /*.page-break + h3 {*/
-            /*    margin-top: 0 !important;*/
-            /*    padding-top: 0 !important;*/
-            /*}*/
-
+            h3, h4, h5 {
+                page-break-inside: avoid;
+                page-break-after: avoid;
+            }
+            ul, ol {
+                page-break-inside: avoid;
+            }
+            .grid-container {
+                margin-bottom: 5px;
+            }
+            .project-title {
+                margin: 8px 0 4px;
+            }
+            h5.fw-bold.mt-4 {
+                margin-top: 0.5rem !important;
+            }
         }
     </style>
 </head>
@@ -93,22 +115,16 @@
     <div class="row g-0 mb-0">
         <div class="col-12">
             <h3 class="fw-bold">About Me</h3>
-
             <div class="col-12">
-                <img style="border-radius: 10px;" src="/assets/img/gitio_new.jpeg" alt="Home" width="40%" align="right">
+                <img style="border-radius: 10px;" src="/assets/img/gitio_new.jpeg" alt="Home" width="30%" align="right">
             </div>
-
-<!--            <h4 id="software-engineer"><code class="language-plaintext highlighter-rouge">Software Engineer</code></h4>-->
-            <br/>
-            <h6 id="e-commerce-장비-제어-주차유도-솔루션">e-commerce, 장비 제어, 주차유도 솔루션,</h6>
-            <h6 id="대용량-데이터-수집-캠페인등의-시스템을-개발했습니다">대용량 데이터 수집, 캠페인, 쿠폰등의 시스템을 개발했습니다.</h6>
-
-            <h6 id="-일이-왜-필요한지를-생각하고"><br/> 일이 '왜' 필요한지를 생각하고,</h6>
-            <h6 id="쉬운-길-보다는-올바른-길을-가려고-노력합니다">쉬운 길 보다는 올바른 길을 가려고 노력합니다.</h6>
-            <h6 id="공유와-협업을-중요시하며-회고를-즐기고-있습니다">공유와 협업을 중요시하며 회고를 즐기고 있습니다.</h6>
-            <h6 id="즐겁게-일하는-사람-함께-일하고-싶은-사람이-되고-싶습니다">즐겁게 일하는 사람, 함께 일하고 싶은 사람이 되고 싶습니다.</h6>
-
-            <p style="margin-top: 20px;">
+            <h6>e-commerce, 장비 제어, 주차유도 솔루션,</h6>
+            <h6>대용량 데이터 수집, 캠페인, 쿠폰등의 시스템을 개발했습니다.</h6>
+            <h6><br/>일이 '왜' 필요한지를 생각하고,</h6>
+            <h6>쉬운 길 보다는 올바른 길을 가려고 노력합니다.</h6>
+            <h6>공유와 협업을 중요시하며 회고를 즐기고 있습니다.</h6>
+            <h6>즐겁게 일하는 사람, 함께 일하고 싶은 사람이 되고 싶습니다.</h6>
+            <p style="margin-top: 10px; margin-bottom: 5px;">
                 <span style="color:white; background-color:darkcyan; font-size:80%">
                     <i>
                         ps. 컴퓨터가 대신할 수 있는 일은 모두 자동화하고,<br/>
@@ -116,28 +132,49 @@
                     </i>
                 </span>
             </p>
-
-            <h6 id="portfolio"><code class="language-plaintext highlighter-rouge">Portfolio</code></h6>
-            <ul>
-                <li><a href="https://kwan1989.github.io"><em>https://kwan1989.github.io</em></a></li>
-            </ul>
-
-            <h6 id="github"><code class="language-plaintext highlighter-rouge">Github</code></h6>
-            <ul>
-                <li><a href="https://github.com/kwan1989"><em>https://github.com/kwan1989</em></a></li>
-            </ul>
-
-            <h6 id="email"><code class="language-plaintext highlighter-rouge">Email</code></h6>
-            <ul>
-                <li><a href="jhg728@naver.com"><em>jhg728@naver.com</em></a></li>
-            </ul>
-
+            <h6><code>Portfolio</code></h6>
+            <ul style="margin-top: -5px; margin-bottom: 3px;"><li><a href="https://kaynism.github.io"><em>https://kaynism.github.io</em></a></li></ul>
+            <h6><code>Github</code></h6>
+            <ul style="margin-top: -5px; margin-bottom: 3px;"><li><a href="https://github.com/kaynism"><em>https://github.com/kaynism</em></a></li></ul>
+            <h6><code>Email</code></h6>
+            <ul style="margin-top: -5px; margin-bottom: 3px;"><li><a href="jhg728@naver.com"><em>jhg728@naver.com</em></a></li></ul>
         </div>
     </div>
 
     <!-- 경험 -->
     <h3 class="fw-bold border-bottom pb-0 mb-2">Experience</h3>
 
+    
+    <div class="row g-1 mb-0">
+        <div class="grid-container">
+            <div class="left-part">
+                <p><b><h5>플레이스앤</h5></b></p>
+                
+                    <p><i><a href="https://www.placen.kr/">https://www.placen.kr/</a></i></p>
+                
+            </div>
+            <div class="right-part">
+                
+                    <p><b>기간</b> : 2025. 08 ~ </p>
+                    <p><b>부서</b> : 나우웨이팅파트</p>
+                
+                <p><b>업무</b> :
+                    
+                        나우웨이팅 서비스 백엔드 개발(Ruby, Java/Kotlin)
+                    
+                </p>
+
+<!--                    여기에 * 형식으로 라인바이 라인으로 할 수 있음. 그러나 포멧 크기상 변경-->
+<!--                <p><b>업무</b> :</p>-->
+<!--                <ul>-->
+<!--                    -->
+<!--                    <li>나우웨이팅 서비스 백엔드 개발(Ruby, Java/Kotlin)</li>-->
+<!--                    -->
+<!--                </ul>-->
+
+            </div>
+        </div>
+    </div>
     
     <div class="row g-1 mb-0">
         <div class="grid-container">
@@ -149,10 +186,10 @@
             </div>
             <div class="right-part">
                 
-                    <p><b>기간</b> : 2025. 02 ~ </p>
+                    <p><b>기간</b> : 2025. 02 ~ 2025. 09</p>
                     <p><b>부서</b> : 서비스플랫폼팀 CRM Part (겸직, 통합쿠폰 개발)</p>
                 
-                    <p><b>기간</b> : 2024. 07 ~ </p>
+                    <p><b>기간</b> : 2024. 07 ~ 2025. 09</p>
                     <p><b>부서</b> : 신사업개발팀 캠페인스쿼드</p>
                 
                 <p><b>업무</b> :
@@ -333,33 +370,280 @@
     </div>
     
 
-    <!-- 주요 성과 - 퍼플아이오 -->
-    <div class="page-break"></div>
-    <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: purple;">Achievement - 퍼플아이오</h3>
-
+    <!-- 주요 성과 (동적 로딩) -->
     
-    
+      
+      
+      
 
-    <div class="row g-1 mb-5">
-        <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-            <h4><font size="5"><u><i>코오롱 오퍼허브 통합 쿠폰서비스 개발</i></u></font></h4>
-        </div>
+        
+          
+
+          
+            <div class="page-break"></div>
+            <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: mediumseagreen;">Achievement - 플레이스앤</h3>
+          
+
+          <div class="row g-1 mb-5">
+            <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+              <h4 class="project-title">통합 메시지 플랫폼(UMS) 서비스 개발</h4>
+            </div>
+            
+            <p style="display: flex; justify-content: center; align-items: center; margin-top: 0;">
+              <a href="/projects/placen-ums-architecture.html" target="_blank" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a>
+            </p>
+            
+
+            <div class="col-md-10" style="margin-top: 10px;">
+              
+                <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
+                <ul>
+  <li><strong>2026.03 ~</strong> (진행중)</li>
+  <li>사내 서비스(도도포인트, 나우웨이팅, CRM) 통합 멀티채널 메시징 플랫폼 설계 및 개발</li>
+  <li>6개 마이크로서비스 모듈 기반 이벤트 드리븐 아키텍처 (Kafka + Outbox 패턴)</li>
+  <li>지원 채널: SMS, LMS, MMS, Email, Push, BizTalk (벤더: UPlus MsgHub, AWS SES, Firebase FCM)</li>
+</ul>
+
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
+                <ul>
+  <li><strong>멀티모듈 이벤트 드리븐 아키텍처</strong>: <b>6개 서버 모듈 + Kafka 기반 비동기 파이프라인, Outbox 패턴으로 메시지 유실 0건</b></li>
+  <li><strong>Redis Lua Guard 패턴</strong>: <b>취소 확인 + 멱등성 + Rate Limit을 단일 RTT로 원자적 실행, 중복 발송률 0%</b></li>
+  <li><strong>Circuit Breaker + Fallback 라우팅</strong>: <b>벤더별 장애 자동 차단(5회 실패 → OPEN) 및 대체 채널 Fallback, 향후 통신사 간 자동 전환(UPlus→KT 등) 확장 설계</b></li>
+  <li><strong>상태 머신 기반 메시지 추적</strong>: <b>QUEUED→PENDING→SENT→SUCCESS/FAILED 전이 검증, 8개 테이블 + Flyway 스키마 관리</b></li>
+  <li><strong>멀티채널 통합 발송</strong>: <b>7개 채널 × 3개 벤더 라우팅, 일일 대량 발송 + 예약 발송 지원</b></li>
+  <li><strong>모니터링 체계 구축</strong>: <b>Micrometer 커스텀 메트릭 4종(처리 건수/벤더 레이턴시/서킷브레이커 트립/예약 처리) + Prometheus 연동</b></li>
+</ul>
+
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
+                <ul>
+  <li><strong>Transactional Outbox 패턴으로 메시지 유실 방지</strong>
+    <ul>
+      <li>문제: 비즈니스 데이터 저장 후 Kafka 발행 실패 시 이벤트 유실 및 정합성 깨짐</li>
+      <li>해결: 단일 트랜잭션으로 비즈니스 데이터 + OutboxEvent 동시 저장, Batch 1분 폴링 릴레이 + DLQ 3회 재시도 후 격리로 At-Least-Once 보장</li>
+    </ul>
+  </li>
+  <li><strong>멀티채널 메시지 순서 보장</strong>
+    <ul>
+      <li>문제: 동일 수신자에게 발송되는 메시지 간 순서가 보장되지 않아 상태 업데이트 역전 발생</li>
+      <li>해결: Kafka Partition Key를 수신자 기준(phoneNumber/email/deviceId)으로 설정하여 동일 수신자 메시지를 동일 파티션에 할당, 파티션 내 순서 보장</li>
+    </ul>
+  </li>
+  <li><strong>벤더 장애 시 대량 발송 실패 전파</strong>
+    <ul>
+      <li>문제: 특정 벤더(UPlus) 장애 시 SMS/LMS/MMS 전체 발송 실패 누적</li>
+      <li>해결: 벤더별 Custom Circuit Breaker(CLOSED→OPEN→HALF_OPEN) + ChannelConfig 기반 Fallback 채널 자동 전환</li>
+    </ul>
+  </li>
+  <li><strong>동시 취소/발송 Race Condition</strong>
+    <ul>
+      <li>문제: 관리자 취소 요청과 발송 처리가 동시 진행 시 취소된 메시지 발송</li>
+      <li>해결: Redis Lua 스크립트로 취소 플래그 확인 + 멱등성 + Rate Limit을 원자적 1 RTT로 처리</li>
+    </ul>
+  </li>
+</ul>
+
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+                <ul>
+  <li>Kotlin Version : <b>2.3.0</b></li>
+  <li>Spring Boot Version : <b>4.0.1 RELEASE</b></li>
+  <li>Java Version : <b>25</b></li>
+  <li>ETC. : <b>Kotlin, Spring Data(JPA, Redis), Spring Kafka(AWS MSK, Confluent 7.9.0), PostgreSQL, Redis Lua Script, Flyway, Micrometer/Prometheus, AWS(SES v2, S3), Firebase Admin SDK, SpringDoc OpenAPI, Docker</b></li>
+</ul>
+
+              
+            </div>
+          </div>
+        
+          
+
+          
+            <div class="page-break"></div>
+            <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: mediumseagreen;">Achievement - 플레이스앤</h3>
+          
+
+          <div class="row g-1 mb-5">
+            <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+              <h4 class="project-title">물류웨이팅</h4>
+            </div>
+            
+
+            <div class="col-md-10" style="margin-top: 10px;">
+              
+                <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
+                <ul>
+  <li>기존 나우웨이팅(F&amp;B 매장 웨이팅) 서비스를 물류센터(쿠팡물류센터 등) 향으로 도메인 확장</li>
+  <li>물류 도메인 모델링: Logistics(물류 예약), Dock(도크/하차점), Line(물류 라인) 엔티티 설계</li>
+  <li>도크 배정/해제, 라인별 온도 구분(상온/냉동/냉장), 차량번호 기반 웨이팅 관리</li>
+</ul>
+
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
+                <ul>
+  <li><strong>물류 도메인 신규 설계</strong>: <b>3개 핵심 엔티티(Logistics/Dock/Line) + 5개 Enum + 12개 Custom Exception 체계화</b></li>
+  <li><strong>이벤트 기반 도메인 분리</strong>: <b>Waiting↔Logistics 직접 의존 제거, 결합도 0으로 감소</b></li>
+  <li><strong>조회 성능 최적화</strong>: <b>QueryDSL JOIN FETCH 4개 조인으로 N+1 쿼리 수 평균 12회 → 1회로 감소 (92% 개선)</b></li>
+  <li><strong>도크 배정 정합성</strong>: <b>ValidatorFactory 5가지 검증 로직으로 잘못된 배정 오류율 0%</b></li>
+  <li><strong>CQRS 적용</strong>: <b>읽기 트랜잭션 readOnly 전환으로 Hibernate dirty checking 비활성화, 메모리 사용 약 30% 절감</b></li>
+  <li><strong>테스트 커버리지</strong>: <b>물류 도메인 JaCoCo Line 80%+ 달성</b></li>
+</ul>
+
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
+                <ul>
+  <li><strong>도크 배정 시 도메인 불변식 위반</strong>
+    <ul>
+      <li>문제: 도크 상태(CLOSED/PAUSED)나 라인 불일치 시에도 배정이 가능한 상황</li>
+      <li>해결: DockValidator에 5가지 검증 로직 캡슐화 (상태, 중복, 라인 일치, 반납 가능 여부)</li>
+    </ul>
+  </li>
+  <li><strong>Waiting↔Logistics 도메인 간 강결합</strong>
+    <ul>
+      <li>문제: Waiting 생성 시 Logistics 직접 참조로 순환 의존 발생</li>
+      <li>해결: Spring ApplicationEventPublisher + TransactionalEventListener(BEFORE_COMMIT)로 이벤트 기반 통신 전환</li>
+    </ul>
+  </li>
+  <li><strong>물류 목록 조회 성능</strong>
+    <ul>
+      <li>문제: Logistics 조회 시 Line, Dock, Waiting 연관관계에서 N+1 쿼리 다수 발생</li>
+      <li>해결: QueryDSL innerJoin().fetchJoin() 4개 조인 + PageableExecutionUtils로 count 쿼리 분리</li>
+    </ul>
+  </li>
+</ul>
+
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+                <ul>
+  <li>Java Version : <b>17</b></li>
+  <li>Spring Boot Version : <b>3.1.3 RELEASE</b></li>
+  <li>ETC. : <b>Java, Spring Data JPA, QueryDSL 5.0, Redisson 3.34, MapStruct 1.5.5, Spring Kafka, PostgreSQL, TestContainers, Fixture Monkey, JaCoCo, SonarQube</b></li>
+</ul>
+
+              
+            </div>
+          </div>
+        
+          
+
+          
+            <div class="page-break"></div>
+            <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: mediumseagreen;">Achievement - 플레이스앤</h3>
+          
+
+          <div class="row g-1 mb-5">
+            <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+              <h4 class="project-title">네이버 커넥트주문</h4>
+            </div>
+            
+
+            <div class="col-md-10" style="margin-top: 10px;">
+              
+                <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
+                <ul>
+  <li>네이버와 포스사를 연결하는 커넥트주문 화이트라벨 플랫폼 백엔드 개발</li>
+  <li>6개 마이크로서비스 모듈 기반 멀티모듈 아키텍처 설계 및 구현 (Gateway, Integration, CEO Admin, Super Admin, POS Admin, POS Open API)</li>
+  <li>JWT 기반 멀티 사용자 인증/인가 시스템 구축 (B2C, CEO Admin, POS Admin, SuperAdmin)</li>
+  <li>QR 코드 기반 테이블 주문 시스템 (ShortenUrl → OrderDestination → OrderGroup → Order)</li>
+</ul>
+
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
+                <ul>
+  <li><strong>멀티모듈 마이크로서비스 아키텍처 설계</strong>: <b>6개 서비스 모듈 + 공통 모듈, Spring Cloud Gateway 기반 단일 진입점</b></li>
+  <li><strong>CQRS 패턴 적용</strong>: <b>Command/Query 분리로 읽기/쓰기 최적화, Master/Slave DB 분리</b></li>
+  <li><strong>전략 패턴 기반 다형 인증 시스템</strong>: <b>AuthStrategy 인터페이스로 4가지 사용자 유형별 인증 로직 분리 (OCP 준수)</b></li>
+  <li><strong>분산 락 구현</strong>: <b>Redis(Redisson) AOP 기반 선언적 분산 락으로 동일 테이블 동시 주문 Race Condition 방지</b></li>
+  <li><strong>Naver OAuth2 통합</strong>: <b>CEO Admin 네이버 로그인 연동, Authorization Code 흐름 구현</b></li>
+  <li><strong>Refresh Token Rotation</strong>: <b>Redis 기반 Refresh Token 저장 + HttpOnly 쿠키 + Token Rotation으로 보안 강화</b></li>
+  <li><strong>DB 스키마 자동화</strong>: <b>Flyway 기반 45개 마이그레이션 버전 관리</b></li>
+</ul>
+
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
+                <ul>
+  <li><strong>동시 주문 Race Condition</strong>
+    <ul>
+      <li>문제: 동일 테이블에 동시 주문 시 OrderGroup 중복 생성</li>
+      <li>해결: Redis 분산 락(Redisson) AOP 기반 @DistributedLock으로 동시성 제어</li>
+    </ul>
+  </li>
+  <li><strong>멀티 사용자 유형 인증 복잡성</strong>
+    <ul>
+      <li>문제: B2C, CEO/POS Admin, SuperAdmin 각각 다른 인증 흐름</li>
+      <li>해결: Strategy Pattern + AuthStrategy 인터페이스 4개 구체 전략으로 OCP 준수</li>
+    </ul>
+  </li>
+</ul>
+
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+                <ul>
+  <li>Kotlin Version : <b>2.2.21</b></li>
+  <li>Spring Boot Version : <b>4.0.1 RELEASE</b></li>
+  <li>Spring Cloud Version : <b>2025.1.0</b></li>
+  <li>Gradle Version : <b>9.2.1</b></li>
+  <li>ETC. : <b>Kotlin, Spring Cloud Gateway, Spring Data JPA, Spring Cloud OpenFeign, QueryDSL 7.0, Flyway 11.19, Redis(Redisson 3.52), JWT(JJWT), PostgreSQL, AWS(ECR, S3, SES), Kotest, TestContainers, FixtureMonkey, Docker</b></li>
+</ul>
+
+              
+            </div>
+          </div>
         
 
-        <div class="col-md-10" style="margin-top: 10px;">
+      
+    
+      
+      
+      
+
+        
+          
+
+          
+            <div class="page-break"></div>
+            <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: purple;">Achievement - 퍼플아이오</h3>
+          
+
+          <div class="row g-1 mb-5">
+            <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+              <h4 class="project-title">코오롱 오퍼허브 통합 쿠폰서비스 개발</h4>
+            </div>
             
-            <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
-            <ul>
+
+            <div class="col-md-10" style="margin-top: 10px;">
+              
+                <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
+                <ul>
   <li>온/오프라인 통합 쿠폰/포인트 허브 개발</li>
   <li>쿠폰 Core 서버로서 다양한 채널(웹, 앱, 오프라인)에서 쿠폰/포인트 발행, 조회, 사용, 취소, 이력 관리</li>
   <li>타겟팅 유저 분석 데이터 수집(캠페인 연동)</li>
 </ul>
 
-            
+              
 
-        
-            <h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
-            <ul>
+              
+                <h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
+                <ul>
   <li><strong>통합 쿠폰 허브 구축</strong>: <b>다양한 발행처를 하나의 통합 허브로 통합</b></li>
   <li><strong>레거시 시스템 현대화</strong>: <b>기존 ETL / SOAP / 프로시저 구조 → REST API 방식 전환</b></li>
   <li><strong>쿠폰 시스템 정규화</strong>: <b>코오롱 내 산재된 쿠폰 시스템 통합 및 표준화</b></li>
@@ -374,11 +658,11 @@
   <li><strong>시스템 안정성</strong>: <b>중복 발행 오류율 0.01% 이하</b></li>
 </ul>
 
-        
+              
 
-        
-            <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
-            <ul>
+              
+                <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
+                <ul>
   <li><strong>쿠폰 중복 발행 동시성 이슈</strong>
     <ul>
       <li>문제: 동시 요청 시 동일 쿠폰 중복 발행 및 재고 부족 상황 처리</li>
@@ -399,49 +683,51 @@
   </li>
 </ul>
 
-        
+              
 
-        
-            <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
-            <ul>
+              
+                <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+                <ul>
   <li>Kotlin Version : <b>1.9.25</b></li>
   <li>Spring boot Version : <b>3.4.2 RELEASE</b></li>
   <li>Gradle Version : <b>8.6</b></li>
   <li>ETC. : <b>Kotlin, Spring Data(JPA, JDBC, Redis), Spring Cache, QueryDSL, AWS(ECR, ECS, RDS, ElastiCache, S3)</b></li>
 </ul>
 
+              
+            </div>
+          </div>
         
-    </div>
-</div>
+          
 
-    
-    <div class="page-break"></div>
-    <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: purple;">Achievement - 퍼플아이오</h3>
-    
+          
+            <div class="page-break"></div>
+            <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: purple;">Achievement - 퍼플아이오</h3>
+          
 
-    <div class="row g-1 mb-5">
-        <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-            <h4><font size="5"><u><i>코오롱 캠페인 서비스 개발</i></u></font></h4>
-        </div>
-        
-        <p style="display: flex; justify-content: center; align-items: center; margin-top: 0;">
-            <a href="https://drive.google.com/file/d/1GyZow4eGJXMqRbS-UDclib-0PanD1URT/view?usp=drive_link" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a>
-        </p>
-        
-
-        <div class="col-md-10" style="margin-top: 10px;">
+          <div class="row g-1 mb-5">
+            <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+              <h4 class="project-title">코오롱 캠페인 서비스 개발</h4>
+            </div>
             
-            <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
-            <ul>
+            <p style="display: flex; justify-content: center; align-items: center; margin-top: 0;">
+              <a href="/projects/purpleio-campaign-architecture.html" target="_blank" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a>
+            </p>
+            
+
+            <div class="col-md-10" style="margin-top: 10px;">
+              
+                <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
+                <ul>
   <li>코오롱 대고객 타겟팅 캠페인(플로우차트)리스팅 고객 대상으로 쿠폰 및 채널성 데이터 발송 시스템</li>
   <li>Hexagonal Architecture</li>
 </ul>
 
-            
+              
 
-        
-            <h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
-            <ul>
+              
+                <h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
+                <ul>
   <li><strong>시스템 전환</strong>: <b>IBM 유니카 → 자체 개발 시스템 마이그레이션</b></li>
   <li><strong>대용량 처리</strong>: <b>천만+ 고객 타겟팅, 일일 100만건+ 처리</b></li>
   <li><strong>비동기 병렬 처리</strong>: <b>캠페인 병렬 처리 아키텍처 구현</b></li>
@@ -451,11 +737,11 @@
   <li><strong>운영 효율</strong>: <b>캠페인 설정 시간 80% 단축</b></li>
 </ul>
 
-        
+              
 
-        
-            <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
-            <ul>
+              
+                <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
+                <ul>
   <li><strong>대용량 채널 발송 시 TPS 급증 문제</strong>
     <ul>
       <li>문제: SNS→SQS→Lambda 구조에서 대량 호출 시 회원서비스 TPS 급증</li>
@@ -484,43 +770,50 @@
   </li>
 </ul>
 
-        
+              
 
-        
-            <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
-            <ul>
+              
+                <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+                <ul>
   <li>Kotlin Version : <b>1.9.25</b></li>
   <li>Spring boot Version : <b>3.4.2 RELEASE</b></li>
   <li>Gradle Version : <b>8.6</b></li>
   <li>ETC. : <b>Kotlin, Kotlin Exposed, Spring Data(JPA, JDBC, Redis, R2DBC, Ldap), Spring StateMachine/Cache/Security/Quartz/Batch/Actuator, QueryDSL, AWS(ECR, ECS, RDS, ElastiCache, S3, SNS, SQS, Lambda(Python))</b></li>
 </ul>
 
+              
+            </div>
+          </div>
         
-    </div>
-</div>
 
-
-    <!-- 주요 성과 - 위메프 -->
-    <div class="page-break"></div>
-    <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: red;">Achievement - 위메프</h3>
-
+      
     
-    
+      
+      
+      
 
-    <div class="row g-1 mb-5">
-        <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-            <h4><font size="5"><u><i>위메프 EP(Engine Page) 데이터 개발</i></u></font></h4>
-        </div>
         
-        <p style="display: flex; justify-content: center; align-items: center; margin-top: 0;">
-            <a href="https://drive.google.com/file/d/1s0-yirJ8kCmZ-9pCBdpA9_ozlSs4QZmi/view?usp=sharing" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a>
-        </p>
-        
+          
 
-        <div class="col-md-10" style="margin-top: 10px;">
+          
+            <div class="page-break"></div>
+            <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: red;">Achievement - 위메프</h3>
+          
+
+          <div class="row g-1 mb-5">
+            <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+              <h4 class="project-title">위메프 EP(Engine Page) 데이터 개발</h4>
+            </div>
             
-            <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
-            <ul>
+            <p style="display: flex; justify-content: center; align-items: center; margin-top: 0;">
+              <a href="/projects/wmp-ep-architecture.html" target="_blank" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a>
+            </p>
+            
+
+            <div class="col-md-10" style="margin-top: 10px;">
+              
+                <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
+                <ul>
   <li>위메프 상품 데이터 (2억~) 외부 노출 데이터 추출 및 가공</li>
   <li>CDC 기반 실시간 데이터 ETL 프로세스 구축</li>
   <li>Legacy PHP 시스템을 Kotlin 으로 전환</li>
@@ -528,11 +821,11 @@
   <li>GCP Cloud Native 아키텍처 도입</li>
 </ul>
 
-            
+              
 
-        
-            <h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
-            <ul>
+              
+                <h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
+                <ul>
   <li>상품 데이터 처리 시간 70% 단축 (12시간 -&gt; 4시간)</li>
   <li>시스템 안정성 향상 (장애 발생률 90% 감소)</li>
   <li>운영 비용 절감 (IDC 대비 30% 비용 절감)</li>
@@ -540,11 +833,11 @@
   <li>MSA 구조 도입으로 서비스 배포 주기 단축</li>
 </ul>
 
-        
+              
 
-        
-            <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
-            <ul>
+              
+                <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
+                <ul>
   <li>대용량 데이터 처리 시 발생하는 OOM 이슈
     <ul>
       <li>Batch Size 조정 및 메모리 모니터링 체계 구축</li>
@@ -564,49 +857,51 @@
   </li>
 </ul>
 
-        
+              
 
-        
-            <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
-            <ul>
+              
+                <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+                <ul>
   <li>Kotlin Version : <b>1.8.0</b></li>
   <li>Spring boot Version : <b>3.0.2 RELEASE</b></li>
   <li>Gradle Version : <b>7.6</b></li>
   <li>ETC. : <b>JPA, MySQL, QueryDSL, debezium, ElasticSearch, Kafka, GCP Pub/Sub, GCP Scheduler, GCP FireStore, GCS</b></li>
 </ul>
 
+              
+            </div>
+          </div>
         
-    </div>
-</div>
+          
 
-    
-    <div class="page-break"></div>
-    <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: red;">Achievement - 위메프</h3>
-    
+          
+            <div class="page-break"></div>
+            <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: red;">Achievement - 위메프</h3>
+          
 
-    <div class="row g-1 mb-5">
-        <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-            <h4><font size="5"><u><i>리뷰 데이터 수집 개발</i></u></font></h4>
-        </div>
-        
-        <p style="display: flex; justify-content: center; align-items: center; margin-top: 0;">
-            <a href="https://drive.google.com/file/d/1w83yhYpyQeFFEAmeKA-8WJENvoF3kC2U/view?usp=drive_link" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a>
-        </p>
-        
-
-        <div class="col-md-10" style="margin-top: 10px;">
+          <div class="row g-1 mb-5">
+            <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+              <h4 class="project-title">리뷰 데이터 수집 개발</h4>
+            </div>
             
-            <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
-            <ul>
+            <p style="display: flex; justify-content: center; align-items: center; margin-top: 0;">
+              <a href="/projects/wmp-review-architecture.html" target="_blank" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a>
+            </p>
+            
+
+            <div class="col-md-10" style="margin-top: 10px;">
+              
+                <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
+                <ul>
   <li>제휴사로 부터 리뷰 데이터를 제공받아 통합하여 리뷰를 표출</li>
   <li>약 3000만건의 리뷰 데이터 수집, 가공 처리 및 리뷰 노출 진행</li>
 </ul>
 
-            
+              
 
-        
-            <h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
-            <ul>
+              
+                <h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
+                <ul>
   <li>리뷰 데이터 정합성 향상 및 안정성 개선
     <ul>
       <li>제휴사별 커스텀 File Parser 구현 및 유효성 검사로 데이터 정확도 향상</li>
@@ -623,11 +918,11 @@
   <li>초기 200만건에서 3000만건으로 안정적 확장</li>
 </ul>
 
-        
+              
 
-        
-            <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
-            <ul>
+              
+                <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
+                <ul>
   <li>이미지 데이터 처리 시 병목 현상
     <ul>
       <li>Lambda를 활용한 비동기 이미지 처리로 전환</li>
@@ -647,39 +942,46 @@
   </li>
 </ul>
 
-        
+              
 
-        
-            <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
-            <ul>
+              
+                <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+                <ul>
   <li>Java Version : <b>17</b></li>
   <li>Spring boot Version : <b>2.7.6 RELEASE</b></li>
   <li>Gradle Version : <b>7.6</b></li>
   <li>ETC. : <b>Spring Batch, H2, JUnit5, VerticaDB, Mybatis, Kafka, AWS SQS, AWS S3, AWS EC2, MongoDB </b></li>
 </ul>
 
-        
-    </div>
-</div>
-
-
-    <!-- 주요 성과 - 프레시코드 -->
-    <div class="page-break"></div>
-    <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: green;">Achievement - FreshCode</h3>
-
-    
-    
-
-    <div class="row g-1 mb-5">
-        <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-            <h4><font size="5"><u><i>프레시코드 서비스 CLOVER</font></i></u></font></h4>
-        </div>
+              
+            </div>
+          </div>
         
 
-        <div class="col-md-10" style="margin-top: 10px;">
+      
+    
+      
+      
+      
+
+        
+          
+
+          
+            <div class="page-break"></div>
+            <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: green;">Achievement - FreshCode</h3>
+          
+
+          <div class="row g-1 mb-5">
+            <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+              <h4 class="project-title">프레시코드 서비스 CLOVER</font></h4>
+            </div>
             
-            <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
-            <ul>
+
+            <div class="col-md-10" style="margin-top: 10px;">
+              
+                <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
+                <ul>
   <li>데이터 베이스 AS-IS 구조 파악 및 TO-BE 구조 설계</li>
   <li>로그인 유저별 장바구니 조회/추가/삭제/변경</li>
   <li>비로그인 장바구니 담긴 내용 로그인시 장바구니 내역 합산</li>
@@ -690,11 +992,11 @@
   <li>배송, 스팟, 유저, 매뉴 어드민 페이지 개발</li>
 </ul>
 
-            
-        
-        
-            <h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
-            <ul>
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
+                <ul>
   <li>기존 서버사이드 렌더링 구조에서 프론트/백엔드 분리 아키텍처로 전환 (응답시간 30% 개선)</li>
   <li>도메인 모델 재설계를 통한 기술부채 해소 및 도메인 효율성 40% 향상</li>
   <li>JUnit5를 활용한 테스트 코드 커버리지 80% 달성</li>
@@ -702,53 +1004,60 @@
   <li>Swagger3 도입으로 API 문서 자동화 및 협업 효율성 증대</li>
 </ul>
 
-        
-        
-        
-            <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
-            <ul>
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
+                <ul>
   <li>ElasticSearch 도입으로 스팟 도메인 위도/경도 좌표 기반 직선거리 계산 구현 (검색 성능 50% 개선)</li>
   <li>Redis 분산 락 적용을 통한 장바구니 물품 수량 동시성 제어</li>
   <li>Redis 캐시 적용으로 반복 조회 데이터 응답속도 개선</li>
 </ul>
 
-        
-        
-        
-            <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
-            <ul>
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+                <ul>
   <li>Java Version : <b>11</b></li>
   <li>Spring boot Version : <b>2.4.11 RELEASE</b></li>
   <li>Gradle Version : <b>6.8.3</b></li>
   <li>ETC. : <b>Spring MVC, Spring Batch, MySQL, H2, JPA, QueryDSL, Swagger3, JUnit5, ElasticSearch</b></li>
 </ul>
 
+              
+            </div>
+          </div>
         
-    </div>
-    </div>
-    
 
-    <!-- 주요 성과 - 넥스파시스템 -->
-    <div class="page-break"></div>
-    <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: blue;">Achievement - Nexpa System</h3>
+      
     
-    
-    
-    
-    
+      
+      
+      
 
-    
-
-    <div class="row g-1 mb-3">
-        <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-            <h4><font size="5"><u><i>주차유도 솔루션 클라우드 전환</i></u></font></h4>
-        </div>
         
-        
-        <div class="col-md-10" style="margin-top: 10px;">
+          
+
+          
             
-            <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
-            <ul>
+            
+            
+              <div class="page-break"></div>
+              <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: blue;">Achievement - Nexpa System</h3>
+            
+          
+
+          <div class="row g-1 mb-3">
+            <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+              <h4 class="project-title">주차유도 솔루션 클라우드 전환</h4>
+            </div>
+            
+
+            <div class="col-md-10" style="margin-top: 10px;">
+              
+                <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
+                <ul>
   <li>넥스파시스템 주차유도 솔루션 클라우화 통합서버 개발</li>
   <li>기존 카메라(영상/이미지) → 로컬서버 영상/이미지 번호인식에서 클라우드 서버 운영</li>
   <li>사내 주차유도 솔루션의 통합 REST 서버 개발</li>
@@ -758,83 +1067,87 @@
   <li>스마트 카메라와의 직접적인 구현</li>
 </ul>
 
-            
-            
-            
-            
-            
-            
-            
-            <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
-            <ul>
+              
+
+              
+
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+                <ul>
   <li>Java Version : <b>amazon corretto-11</b></li>
   <li>Spring boot Version : <b>2.3.4 RELEASE</b></li>
   <li>Gradle Version : <b>6.7.0</b></li>
   <li>ETC. : <b>Spring MVC, Gradle, PostgreSQL, JPA, QueryDSL, JUnit4</b></li>
 </ul>
 
-            
-        </div>
-    </div>
-    
-    
-    
-    
-
-    
-
-    <div class="row g-1 mb-3">
-        <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-            <h4><font size="5"><u><i>SKT 주차장별 주차 현황 데이터 서버</i></u></font></h4>
-        </div>
+              
+            </div>
+          </div>
         
-        
-        <div class="col-md-10" style="margin-top: 10px;">
+          
+
+          
             
-            <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
-            <ul>
+            
+            
+          
+
+          <div class="row g-1 mb-3">
+            <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+              <h4 class="project-title">SKT 주차장별 주차 현황 데이터 서버</h4>
+            </div>
+            
+
+            <div class="col-md-10" style="margin-top: 10px;">
+              
+                <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
+                <ul>
   <li>넥스파 주차유도 솔루션이 적용되어 있는 주차장 실시간 데이터 ↔ SKTmap 공유</li>
   <li>주차장별/층별/주차면타입별 구분</li>
 </ul>
 
-            
-            
-            
-            
-            
-            
-            
-            <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
-            <ul>
+              
+
+              
+
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+                <ul>
   <li>Java Version : <b>amazon corretto-11</b></li>
   <li>Spring boot Version : <b>2.3.4 RELEASE</b></li>
   <li>Gradle Version : <b>6.7.0</b></li>
   <li>ETC. : <b>Spring MVC, Gradle, PostgreSQL, Mybatis</b></li>
 </ul>
 
-            
-        </div>
-    </div>
-    
-    
-    
-    
-
-    
-    <div class="page-break"></div>
-    <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: blue;">Achievement - Nexpa System</h3>
-    
-
-    <div class="row g-1 mb-3">
-        <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-            <h4><font size="5"><u><i>통합장애알람 솔루션 개발</i></u></font></h4>
-        </div>
+              
+            </div>
+          </div>
         
-        
-        <div class="col-md-10" style="margin-top: 10px;">
+          
+
+          
             
-            <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
-            <ul>
+            
+            
+              <div class="page-break"></div>
+              <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: blue;">Achievement - Nexpa System</h3>
+            
+          
+
+          <div class="row g-1 mb-3">
+            <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+              <h4 class="project-title">통합장애알람 솔루션 개발</h4>
+            </div>
+            
+
+            <div class="col-md-10" style="margin-top: 10px;">
+              
+                <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
+                <ul>
   <li>시스템 장애관련 데이터화, 검색, 조회, 점검 기능 개발</li>
   <li>영상저장 서버와 RTSP 저장 상태로 카메라의 정상저장여부 확인</li>
   <li>WatchDog 기능, 핑테스트, PostgeSQL DB 이중화 정상여부 체크, 클라우드서버로 부터 서버 및 등록된 서버 자동업데이트 기능, 저장드라이브 용량 관리 기능</li>
@@ -844,39 +1157,41 @@
   <li>유지보수능력이 증대되면서 운영자 및 A/S 요원들이 빠른 대응 증대</li>
 </ul>
 
-            
-            
-            
-            
-            
-            
-            
-            <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
-            <ul>
+              
+
+              
+
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+                <ul>
   <li>.NET Version : <b>3.5</b></li>
   <li>ETC. : <b>C#, Message Comm(Window), PostgreSQL, MSSQL, Oracle, DB2, MultiThread, TCP/UDP Socket, FTP</b></li>
 </ul>
 
-            
-        </div>
-    </div>
-    
-    
-    
-    
-
-    
-
-    <div class="row g-1 mb-3">
-        <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-            <h4><font size="5"><u><i>VDI 솔루션 개발</i></u></font></h4>
-        </div>
+              
+            </div>
+          </div>
         
-        
-        <div class="col-md-10" style="margin-top: 10px;">
+          
+
+          
             
-            <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
-            <ul>
+            
+            
+          
+
+          <div class="row g-1 mb-3">
+            <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+              <h4 class="project-title">VDI 솔루션 개발</h4>
+            </div>
+            
+
+            <div class="col-md-10" style="margin-top: 10px;">
+              
+                <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
+                <ul>
   <li>이용자가 지정 곳에 주차하도록 전광판들로 자동 안내하는 지능형 주차 솔루션</li>
   <li>롯데정보통신과 주차이력간 데이터 송수신 서버(Java, SpringBoot)</li>
   <li>카메라 번호 인식 → VDI 연산 로직 → 해당 전광판에 유도방향과 실시간 주차대수 표기 서버(C#, VDIServer)</li>
@@ -885,83 +1200,87 @@
   <li><a href="https://docs.google.com/presentation/d/1viWRJBELC9hP7pGsyg5AQDR8HkiLqTJ80wZffyYqnV4/edit?usp=sharing">Data Flow Diagram</a></li>
 </ul>
 
-            
-            
-            
-            
-            
-            
-            
-            <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
-            <ul>
+              
+
+              
+
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+                <ul>
   <li>.NET Version : <b>3.5</b></li>
   <li>Java Version : <b>1.8</b></li>
   <li>ETC. : <b>C#, PostgreSQL, MSSQL, MultiThread, IP Byte Comm.</b></li>
   <li>ETC. : <b>Java, Spring MVC, RSA</b></li>
 </ul>
 
-            
-        </div>
-    </div>
-    
-    
-    
-    
-
-    
-    <div class="page-break"></div>
-    <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: blue;">Achievement - Nexpa System</h3>
-    
-
-    <div class="row g-1 mb-3">
-        <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-            <h4><font size="5"><u><i>NPCloudUploader</i></u></font></h4>
-        </div>
+              
+            </div>
+          </div>
         
-        
-        <div class="col-md-10" style="margin-top: 10px;">
+          
+
+          
             
-            <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
-            <ul>
+            
+            
+              <div class="page-break"></div>
+              <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: blue;">Achievement - Nexpa System</h3>
+            
+          
+
+          <div class="row g-1 mb-3">
+            <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+              <h4 class="project-title">NPCloudUploader</h4>
+            </div>
+            
+
+            <div class="col-md-10" style="margin-top: 10px;">
+              
+                <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
+                <ul>
   <li>로컬 운영 시스템의 랜섬웨어 영향으로 데이터 손실이 간헐적으로 발생 백업시스템 개발 필요</li>
   <li>데이터베이스 백업(DB타입별 선택)하여 OracleCloud 로 업로드</li>
   <li>AWS를 사용하지 않고 OracleCloud를 사용한 이유는 팀내 운영비용상 OracleCloud 저렴</li>
   <li><a href="https://docs.google.com/presentation/d/1R2aA485F2ETe_zsA6kGna9B-zmc-h1CAOlDKWwok05Q/edit?usp=sharing">Data Flow Diagram</a></li>
 </ul>
 
-            
-            
-            
-            
-            
-            
-            
-            <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
-            <ul>
+              
+
+              
+
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+                <ul>
   <li>.NET Version : <b>3.5</b></li>
   <li>ETC. : <b>C#, PostgreSQL, MSSQL, Oracle Cloud, Oracle Storage</b></li>
 </ul>
 
-            
-        </div>
-    </div>
-    
-    
-    
-    
-
-    
-
-    <div class="row g-1 mb-3">
-        <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-            <h4><font size="5"><u><i>nxLPRTest</i></u></font></h4>
-        </div>
+              
+            </div>
+          </div>
         
-        
-        <div class="col-md-10" style="margin-top: 10px;">
+          
+
+          
             
-            <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
-            <ul>
+            
+            
+          
+
+          <div class="row g-1 mb-3">
+            <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+              <h4 class="project-title">nxLPRTest</h4>
+            </div>
+            
+
+            <div class="col-md-10" style="margin-top: 10px;">
+              
+                <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
+                <ul>
   <li>번호판 이미지를 가지고 번호인식율 연산 소프트웨어</li>
   <li>LPR(번호인식모듈) 을 가지고 소프트웨어에서 해당 이미지들의 정상인식/미인식/오인식 등의 판단 사유를 판단하여 레포트 작성</li>
   <li>테스트 이후 각 정사인식/미인식/오인식으로 구분하여 이미지 파일 따로 저장</li>
@@ -970,42 +1289,43 @@
   <li>테스트 자동화, 기존 1스레드로 작동방식을 최대 스레드까지 유연하게 동작하게끔 작성하여 대량의 이미지 테스트시 작업 향상</li>
 </ul>
 
-            
-            
-            
-            
-            
-            
-            
-            <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
-            <ul>
+              
+
+              
+
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+                <ul>
   <li>.NET Version : <b>3.5</b></li>
   <li>ETC. : <b>C#, OpenCV, MultiThread</b></li>
 </ul>
 
-            
-        </div>
-    </div>
-    
-    
-    
-    
-
-    
-    <div class="page-break"></div>
-    <h3 class="fw-bold border-bottom pb-2 mb-2" style="color: blue;">Achievement - Nexpa System</h3>
-    
-
-    <div class="row g-1 mb-3">
-        <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-            <h4><font size="5"><u><i>NPSettingManager</i></u></font></h4>
-        </div>
+              
+            </div>
+          </div>
         
-        
-        <div class="col-md-10" style="margin-top: 10px;">
+          
+
+          
             
-            <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
-            <ul>
+            
+            
+              <!-- 마지막 1개는 이전 페이지에 합침 -->
+            
+          
+
+          <div class="row g-1 mb-3">
+            <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+              <h4 class="project-title">NPSettingManager</h4>
+            </div>
+            
+
+            <div class="col-md-10" style="margin-top: 10px;">
+              
+                <h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>
+                <ul>
   <li>개발 외 반복적인 설치/설정 업무로 인해 자동 소프트웨어 개발 (사이트 셋업시 업무효율 향상, 팀내 소프트웨어 공유)</li>
   <li>각 서버류 소프트웨어 데이터베이스기반 데이터로 자동 설정</li>
   <li>자동 시간동기화</li>
@@ -1014,22 +1334,25 @@
   <li>운영에 필요한 DLL, Tool 자동 등록</li>
 </ul>
 
-            
-            
-            
-            
-            
-            
-            
-            <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
-            <ul>
+              
+
+              
+
+              
+
+              
+                <h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+                <ul>
   <li>.NET Version : <b>3.5</b></li>
   <li>ETC. : <b>C#, PostgreSQL, WinAPI</b></li>
 </ul>
 
-            
-        </div>
-    </div>
+              
+            </div>
+          </div>
+        
+
+      
     
 
 

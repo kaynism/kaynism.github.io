@@ -51,7 +51,7 @@
 
 <h5 id="github"><code class="language-plaintext highlighter-rouge">Github</code></h5>
 <ul>
-  <li><a href="https://github.com/kwan1989"><em>https://github.com/kwan1989</em></a></li>
+  <li><a href="https://github.com/kaynism"><em>https://github.com/kaynism</em></a></li>
 </ul>
 
 <h5 id="email"><code class="language-plaintext highlighter-rouge">Email</code></h5>
@@ -67,7 +67,7 @@
 
 <h5 id="linkedin"><code class="language-plaintext highlighter-rouge">Linkedin</code></h5>
 <ul>
-  <li><a href="https://www.linkedin.com/in/kwan1989"><em>https://www.linkedin.com/in/kwan1989</em></a></li>
+  <li><a href="https://www.linkedin.com/in/kaynism"><em>https://www.linkedin.com/in/kaynism</em></a></li>
 </ul>
 
 
@@ -85,13 +85,27 @@
 
             <!--                Experience 부분 좌측 회사명 부분 수정은 experience.yml-->
             <div class="col-md-3">
+                <h4>플레이스앤</h4>
+                <i><a href="https://www.placen.kr/">https://www.placen.kr/</a></i>
+            </div>
+
+            <!--                Experience 부분 우측 영역 수정은 experience.yml-->
+            <div class="col-md-5 offset-md-4"><p style="margin-bottom: 0;"><b>기간</b> : 2025. 08 ~ </p>
+                <p style="margin-bottom: 0;"><b>부서</b> : 나우웨이팅파트</p><p style="margin-bottom: 0;"><b>활동</b> : Backend Engineer</p><p style="margin-bottom: 0;"><b>직급</b> : 매니저</p><p style="margin-bottom: 0;"><b>업무</b> :</p>  <!-- 업무 항목 시작 -->
+                <ul><li>나우웨이팅 서비스 백엔드 개발(Ruby, Java/Kotlin)</li>  <!-- 각 업무를 리스트로 출력 --></ul></div>
+        </div>
+        
+        <div class="row g-5 mb-5">
+
+            <!--                Experience 부분 좌측 회사명 부분 수정은 experience.yml-->
+            <div class="col-md-3">
                 <h4>퍼플아이오</h4>
                 <i><a href="https://purple.io">https://purple.io</a></i>
             </div>
 
             <!--                Experience 부분 우측 영역 수정은 experience.yml-->
-            <div class="col-md-5 offset-md-4"><p style="margin-bottom: 0;"><b>기간</b> : 2025. 02 ~ </p>
-                <p style="margin-bottom: 0;"><b>부서</b> : 서비스플랫폼팀 CRM Part (겸직, 통합쿠폰 개발)</p><p style="margin-bottom: 0;"><b>기간</b> : 2024. 07 ~ </p>
+            <div class="col-md-5 offset-md-4"><p style="margin-bottom: 0;"><b>기간</b> : 2025. 02 ~ 2025. 09</p>
+                <p style="margin-bottom: 0;"><b>부서</b> : 서비스플랫폼팀 CRM Part (겸직, 통합쿠폰 개발)</p><p style="margin-bottom: 0;"><b>기간</b> : 2024. 07 ~ 2025. 09</p>
                 <p style="margin-bottom: 0;"><b>부서</b> : 신사업개발팀 캠페인스쿼드</p><p style="margin-bottom: 0;"><b>활동</b> : Backend Engineer</p><p style="margin-bottom: 0;"><b>직급</b> : 매니저</p><p style="margin-bottom: 0;"><b>업무</b> :</p>  <!-- 업무 항목 시작 -->
                 <ul><li>코오롱 캠페인 서비스 백엔드 개발(Kotlin)</li>  <!-- 각 업무를 리스트로 출력 --><li>코오롱 통합 쿠폰 서비스 백엔드 개발(Kotlin)</li>  <!-- 각 업무를 리스트로 출력 --></ul></div>
         </div>
@@ -169,12 +183,206 @@
     </div>
 </div>
 
-        <!-- 주요 성과 - 퍼플아이오  -->
-        <div class="row g-5 mb-5">
-    <div>
-        <h3 class="fw-bold border-bottom pb-3 mb-5" style="color: purple;">Achievement - 퍼플아이오</h3>
+        <!-- 주요 성과 (동적 로딩) -->
         
-            <!-- _includes/left.html -->
+  
+  
+  
+  <div class="row g-5 mb-5">
+    <div>
+      <h3 class="fw-bold border-bottom pb-3 mb-5" style="color: mediumseagreen;">Achievement - 플레이스앤</h3>
+      
+        <!-- _includes/left.html -->
+<div class="row g-5 mb-5">
+    <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: underline; font-style: italic;">
+    <h4>통합 메시지 플랫폼(UMS) 서비스 개발</h4>          <!-- YAML의 name 필드 -->
+    </div>
+    <p style="display: flex; justify-content: center; align-items: center; margin-top: -5px;"><a href="/projects/placen-ums-architecture.html" target="_blank" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a></p>
+    <div class="col-md-10 " style="margin-top: 10px;">
+<!----><h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>  <!-- YAML의 quote 필드 -->
+        <ul>
+  <li><strong>2026.03 ~</strong> (진행중)</li>
+  <li>사내 서비스(도도포인트, 나우웨이팅, CRM) 통합 멀티채널 메시징 플랫폼 설계 및 개발</li>
+  <li>6개 마이크로서비스 모듈 기반 이벤트 드리븐 아키텍처 (Kafka + Outbox 패턴)</li>
+  <li>지원 채널: SMS, LMS, MMS, Email, Push, BizTalk (벤더: UPlus MsgHub, AWS SES, Firebase FCM)</li>
+</ul>
+<!--        <ul>
+  <li><strong>2026.03 ~</strong> (진행중)</li>
+  <li>사내 서비스(도도포인트, 나우웨이팅, CRM) 통합 멀티채널 메시징 플랫폼 설계 및 개발</li>
+  <li>6개 마이크로서비스 모듈 기반 이벤트 드리븐 아키텍처 (Kafka + Outbox 패턴)</li>
+  <li>지원 채널: SMS, LMS, MMS, Email, Push, BizTalk (벤더: UPlus MsgHub, AWS SES, Firebase FCM)</li>
+</ul>
+  &lt;!&ndash; YAML의 description 필드 &ndash;&gt;--><h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
+        <ul>
+  <li><strong>멀티모듈 이벤트 드리븐 아키텍처</strong>: <b>6개 서버 모듈 + Kafka 기반 비동기 파이프라인, Outbox 패턴으로 메시지 유실 0건</b></li>
+  <li><strong>Redis Lua Guard 패턴</strong>: <b>취소 확인 + 멱등성 + Rate Limit을 단일 RTT로 원자적 실행, 중복 발송률 0%</b></li>
+  <li><strong>Circuit Breaker + Fallback 라우팅</strong>: <b>벤더별 장애 자동 차단(5회 실패 → OPEN) 및 대체 채널 Fallback, 향후 통신사 간 자동 전환(UPlus→KT 등) 확장 설계</b></li>
+  <li><strong>상태 머신 기반 메시지 추적</strong>: <b>QUEUED→PENDING→SENT→SUCCESS/FAILED 전이 검증, 8개 테이블 + Flyway 스키마 관리</b></li>
+  <li><strong>멀티채널 통합 발송</strong>: <b>7개 채널 × 3개 벤더 라우팅, 일일 대량 발송 + 예약 발송 지원</b></li>
+  <li><strong>모니터링 체계 구축</strong>: <b>Micrometer 커스텀 메트릭 4종(처리 건수/벤더 레이턴시/서킷브레이커 트립/예약 처리) + Prometheus 연동</b></li>
+</ul>
+<h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
+        <ul>
+  <li><strong>Transactional Outbox 패턴으로 메시지 유실 방지</strong>
+    <ul>
+      <li>문제: 비즈니스 데이터 저장 후 Kafka 발행 실패 시 이벤트 유실 및 정합성 깨짐</li>
+      <li>해결: 단일 트랜잭션으로 비즈니스 데이터 + OutboxEvent 동시 저장, Batch 1분 폴링 릴레이 + DLQ 3회 재시도 후 격리로 At-Least-Once 보장</li>
+    </ul>
+  </li>
+  <li><strong>멀티채널 메시지 순서 보장</strong>
+    <ul>
+      <li>문제: 동일 수신자에게 발송되는 메시지 간 순서가 보장되지 않아 상태 업데이트 역전 발생</li>
+      <li>해결: Kafka Partition Key를 수신자 기준(phoneNumber/email/deviceId)으로 설정하여 동일 수신자 메시지를 동일 파티션에 할당, 파티션 내 순서 보장</li>
+    </ul>
+  </li>
+  <li><strong>벤더 장애 시 대량 발송 실패 전파</strong>
+    <ul>
+      <li>문제: 특정 벤더(UPlus) 장애 시 SMS/LMS/MMS 전체 발송 실패 누적</li>
+      <li>해결: 벤더별 Custom Circuit Breaker(CLOSED→OPEN→HALF_OPEN) + ChannelConfig 기반 Fallback 채널 자동 전환</li>
+    </ul>
+  </li>
+  <li><strong>동시 취소/발송 Race Condition</strong>
+    <ul>
+      <li>문제: 관리자 취소 요청과 발송 처리가 동시 진행 시 취소된 메시지 발송</li>
+      <li>해결: Redis Lua 스크립트로 취소 플래그 확인 + 멱등성 + Rate Limit을 원자적 1 RTT로 처리</li>
+    </ul>
+  </li>
+</ul>
+<h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+        <ul>
+  <li>Kotlin Version : <b>2.3.0</b></li>
+  <li>Spring Boot Version : <b>4.0.1 RELEASE</b></li>
+  <li>Java Version : <b>25</b></li>
+  <li>ETC. : <b>Kotlin, Spring Data(JPA, Redis), Spring Kafka(AWS MSK, Confluent 7.9.0), PostgreSQL, Redis Lua Script, Flyway, Micrometer/Prometheus, AWS(SES v2, S3), Firebase Admin SDK, SpringDoc OpenAPI, Docker</b></li>
+</ul>
+      <!-- YAML의 version 필드 --></div>
+</div>
+      
+        <!-- _includes/left.html -->
+<div class="row g-5 mb-5">
+    <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: underline; font-style: italic;">
+    <h4>물류웨이팅</h4>          <!-- YAML의 name 필드 -->
+    </div>
+    <p style="display: flex; justify-content: center; align-items: center; margin-top: -5px;"></p>
+    <div class="col-md-10 " style="margin-top: 10px;">
+<!----><h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>  <!-- YAML의 quote 필드 -->
+        <ul>
+  <li>기존 나우웨이팅(F&amp;B 매장 웨이팅) 서비스를 물류센터(쿠팡물류센터 등) 향으로 도메인 확장</li>
+  <li>물류 도메인 모델링: Logistics(물류 예약), Dock(도크/하차점), Line(물류 라인) 엔티티 설계</li>
+  <li>도크 배정/해제, 라인별 온도 구분(상온/냉동/냉장), 차량번호 기반 웨이팅 관리</li>
+</ul>
+<!--        <ul>
+  <li>기존 나우웨이팅(F&amp;B 매장 웨이팅) 서비스를 물류센터(쿠팡물류센터 등) 향으로 도메인 확장</li>
+  <li>물류 도메인 모델링: Logistics(물류 예약), Dock(도크/하차점), Line(물류 라인) 엔티티 설계</li>
+  <li>도크 배정/해제, 라인별 온도 구분(상온/냉동/냉장), 차량번호 기반 웨이팅 관리</li>
+</ul>
+  &lt;!&ndash; YAML의 description 필드 &ndash;&gt;--><h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
+        <ul>
+  <li><strong>물류 도메인 신규 설계</strong>: <b>3개 핵심 엔티티(Logistics/Dock/Line) + 5개 Enum + 12개 Custom Exception 체계화</b></li>
+  <li><strong>이벤트 기반 도메인 분리</strong>: <b>Waiting↔Logistics 직접 의존 제거, 결합도 0으로 감소</b></li>
+  <li><strong>조회 성능 최적화</strong>: <b>QueryDSL JOIN FETCH 4개 조인으로 N+1 쿼리 수 평균 12회 → 1회로 감소 (92% 개선)</b></li>
+  <li><strong>도크 배정 정합성</strong>: <b>ValidatorFactory 5가지 검증 로직으로 잘못된 배정 오류율 0%</b></li>
+  <li><strong>CQRS 적용</strong>: <b>읽기 트랜잭션 readOnly 전환으로 Hibernate dirty checking 비활성화, 메모리 사용 약 30% 절감</b></li>
+  <li><strong>테스트 커버리지</strong>: <b>물류 도메인 JaCoCo Line 80%+ 달성</b></li>
+</ul>
+<h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
+        <ul>
+  <li><strong>도크 배정 시 도메인 불변식 위반</strong>
+    <ul>
+      <li>문제: 도크 상태(CLOSED/PAUSED)나 라인 불일치 시에도 배정이 가능한 상황</li>
+      <li>해결: DockValidator에 5가지 검증 로직 캡슐화 (상태, 중복, 라인 일치, 반납 가능 여부)</li>
+    </ul>
+  </li>
+  <li><strong>Waiting↔Logistics 도메인 간 강결합</strong>
+    <ul>
+      <li>문제: Waiting 생성 시 Logistics 직접 참조로 순환 의존 발생</li>
+      <li>해결: Spring ApplicationEventPublisher + TransactionalEventListener(BEFORE_COMMIT)로 이벤트 기반 통신 전환</li>
+    </ul>
+  </li>
+  <li><strong>물류 목록 조회 성능</strong>
+    <ul>
+      <li>문제: Logistics 조회 시 Line, Dock, Waiting 연관관계에서 N+1 쿼리 다수 발생</li>
+      <li>해결: QueryDSL innerJoin().fetchJoin() 4개 조인 + PageableExecutionUtils로 count 쿼리 분리</li>
+    </ul>
+  </li>
+</ul>
+<h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+        <ul>
+  <li>Java Version : <b>17</b></li>
+  <li>Spring Boot Version : <b>3.1.3 RELEASE</b></li>
+  <li>ETC. : <b>Java, Spring Data JPA, QueryDSL 5.0, Redisson 3.34, MapStruct 1.5.5, Spring Kafka, PostgreSQL, TestContainers, Fixture Monkey, JaCoCo, SonarQube</b></li>
+</ul>
+      <!-- YAML의 version 필드 --></div>
+</div>
+      
+        <!-- _includes/left.html -->
+<div class="row g-5 mb-5">
+    <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: underline; font-style: italic;">
+    <h4>네이버 커넥트주문</h4>          <!-- YAML의 name 필드 -->
+    </div>
+    <p style="display: flex; justify-content: center; align-items: center; margin-top: -5px;"></p>
+    <div class="col-md-10 " style="margin-top: 10px;">
+<!----><h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>  <!-- YAML의 quote 필드 -->
+        <ul>
+  <li>네이버와 포스사를 연결하는 커넥트주문 화이트라벨 플랫폼 백엔드 개발</li>
+  <li>6개 마이크로서비스 모듈 기반 멀티모듈 아키텍처 설계 및 구현 (Gateway, Integration, CEO Admin, Super Admin, POS Admin, POS Open API)</li>
+  <li>JWT 기반 멀티 사용자 인증/인가 시스템 구축 (B2C, CEO Admin, POS Admin, SuperAdmin)</li>
+  <li>QR 코드 기반 테이블 주문 시스템 (ShortenUrl → OrderDestination → OrderGroup → Order)</li>
+</ul>
+<!--        <ul>
+  <li>네이버와 포스사를 연결하는 커넥트주문 화이트라벨 플랫폼 백엔드 개발</li>
+  <li>6개 마이크로서비스 모듈 기반 멀티모듈 아키텍처 설계 및 구현 (Gateway, Integration, CEO Admin, Super Admin, POS Admin, POS Open API)</li>
+  <li>JWT 기반 멀티 사용자 인증/인가 시스템 구축 (B2C, CEO Admin, POS Admin, SuperAdmin)</li>
+  <li>QR 코드 기반 테이블 주문 시스템 (ShortenUrl → OrderDestination → OrderGroup → Order)</li>
+</ul>
+  &lt;!&ndash; YAML의 description 필드 &ndash;&gt;--><h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
+        <ul>
+  <li><strong>멀티모듈 마이크로서비스 아키텍처 설계</strong>: <b>6개 서비스 모듈 + 공통 모듈, Spring Cloud Gateway 기반 단일 진입점</b></li>
+  <li><strong>CQRS 패턴 적용</strong>: <b>Command/Query 분리로 읽기/쓰기 최적화, Master/Slave DB 분리</b></li>
+  <li><strong>전략 패턴 기반 다형 인증 시스템</strong>: <b>AuthStrategy 인터페이스로 4가지 사용자 유형별 인증 로직 분리 (OCP 준수)</b></li>
+  <li><strong>분산 락 구현</strong>: <b>Redis(Redisson) AOP 기반 선언적 분산 락으로 동일 테이블 동시 주문 Race Condition 방지</b></li>
+  <li><strong>Naver OAuth2 통합</strong>: <b>CEO Admin 네이버 로그인 연동, Authorization Code 흐름 구현</b></li>
+  <li><strong>Refresh Token Rotation</strong>: <b>Redis 기반 Refresh Token 저장 + HttpOnly 쿠키 + Token Rotation으로 보안 강화</b></li>
+  <li><strong>DB 스키마 자동화</strong>: <b>Flyway 기반 45개 마이그레이션 버전 관리</b></li>
+</ul>
+<h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
+        <ul>
+  <li><strong>동시 주문 Race Condition</strong>
+    <ul>
+      <li>문제: 동일 테이블에 동시 주문 시 OrderGroup 중복 생성</li>
+      <li>해결: Redis 분산 락(Redisson) AOP 기반 @DistributedLock으로 동시성 제어</li>
+    </ul>
+  </li>
+  <li><strong>멀티 사용자 유형 인증 복잡성</strong>
+    <ul>
+      <li>문제: B2C, CEO/POS Admin, SuperAdmin 각각 다른 인증 흐름</li>
+      <li>해결: Strategy Pattern + AuthStrategy 인터페이스 4개 구체 전략으로 OCP 준수</li>
+    </ul>
+  </li>
+</ul>
+<h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+        <ul>
+  <li>Kotlin Version : <b>2.2.21</b></li>
+  <li>Spring Boot Version : <b>4.0.1 RELEASE</b></li>
+  <li>Spring Cloud Version : <b>2025.1.0</b></li>
+  <li>Gradle Version : <b>9.2.1</b></li>
+  <li>ETC. : <b>Kotlin, Spring Cloud Gateway, Spring Data JPA, Spring Cloud OpenFeign, QueryDSL 7.0, Flyway 11.19, Redis(Redisson 3.52), JWT(JJWT), PostgreSQL, AWS(ECR, S3, SES), Kotest, TestContainers, FixtureMonkey, Docker</b></li>
+</ul>
+      <!-- YAML의 version 필드 --></div>
+</div>
+      
+    </div>
+  </div>
+  
+
+  
+  
+  
+  <div class="row g-5 mb-5">
+    <div>
+      <h3 class="fw-bold border-bottom pb-3 mb-5" style="color: purple;">Achievement - 퍼플아이오</h3>
+      
+        <!-- _includes/left.html -->
 <div class="row g-5 mb-5">
     <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: underline; font-style: italic;">
     <h4>코오롱 오퍼허브 통합 쿠폰서비스 개발</h4>          <!-- YAML의 name 필드 -->
@@ -237,13 +445,13 @@
 </ul>
       <!-- YAML의 version 필드 --></div>
 </div>
-        
-            <!-- _includes/left.html -->
+      
+        <!-- _includes/left.html -->
 <div class="row g-5 mb-5">
     <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: underline; font-style: italic;">
     <h4>코오롱 캠페인 서비스 개발</h4>          <!-- YAML의 name 필드 -->
     </div>
-    <p style="display: flex; justify-content: center; align-items: center; margin-top: -5px;"><a href="https://drive.google.com/file/d/1GyZow4eGJXMqRbS-UDclib-0PanD1URT/view?usp=drive_link" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a></p>
+    <p style="display: flex; justify-content: center; align-items: center; margin-top: -5px;"><a href="/projects/purpleio-campaign-architecture.html" target="_blank" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a></p>
     <div class="col-md-10 " style="margin-top: 10px;">
 <!----><h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>  <!-- YAML의 quote 필드 -->
         <ul>
@@ -302,20 +510,24 @@
 </ul>
       <!-- YAML의 version 필드 --></div>
 </div>
-        
+      
     </div>
-</div>
-        <!-- 주요 성과 - 위메프  -->
-        <div class="row g-5 mb-5">
+  </div>
+  
+
+  
+  
+  
+  <div class="row g-5 mb-5">
     <div>
-        <h3 class="fw-bold border-bottom pb-3 mb-5" style="color: red;">Achievement - 위메프</h3>
-        
-            <!-- _includes/left.html -->
+      <h3 class="fw-bold border-bottom pb-3 mb-5" style="color: red;">Achievement - 위메프</h3>
+      
+        <!-- _includes/left.html -->
 <div class="row g-5 mb-5">
     <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: underline; font-style: italic;">
     <h4>위메프 EP(Engine Page) 데이터 개발</h4>          <!-- YAML의 name 필드 -->
     </div>
-    <p style="display: flex; justify-content: center; align-items: center; margin-top: -5px;"><a href="https://drive.google.com/file/d/1s0-yirJ8kCmZ-9pCBdpA9_ozlSs4QZmi/view?usp=sharing" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a></p>
+    <p style="display: flex; justify-content: center; align-items: center; margin-top: -5px;"><a href="/projects/wmp-ep-architecture.html" target="_blank" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a></p>
     <div class="col-md-10 " style="margin-top: 10px;">
 <!----><h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>  <!-- YAML의 quote 필드 -->
         <ul>
@@ -369,13 +581,13 @@
 </ul>
       <!-- YAML의 version 필드 --></div>
 </div>
-        
-            <!-- _includes/left.html -->
+      
+        <!-- _includes/left.html -->
 <div class="row g-5 mb-5">
     <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: underline; font-style: italic;">
     <h4>리뷰 데이터 수집 개발</h4>          <!-- YAML의 name 필드 -->
     </div>
-    <p style="display: flex; justify-content: center; align-items: center; margin-top: -5px;"><a href="https://drive.google.com/file/d/1w83yhYpyQeFFEAmeKA-8WJENvoF3kC2U/view?usp=drive_link" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a></p>
+    <p style="display: flex; justify-content: center; align-items: center; margin-top: -5px;"><a href="/projects/wmp-review-architecture.html" target="_blank" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a></p>
     <div class="col-md-10 " style="margin-top: 10px;">
 <!----><h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>  <!-- YAML의 quote 필드 -->
         <ul>
@@ -432,15 +644,19 @@
 </ul>
       <!-- YAML의 version 필드 --></div>
 </div>
-        
+      
     </div>
-</div>
-        <!-- 주요 성과 - 프레시코드  -->
-        <div class="row g-5 mb-5">
+  </div>
+  
+
+  
+  
+  
+  <div class="row g-5 mb-5">
     <div>
-        <h3 class="fw-bold border-bottom pb-3 mb-5" style="color: green;">Achievement - FreshCode</h3>
-        
-            <!-- _includes/left.html -->
+      <h3 class="fw-bold border-bottom pb-3 mb-5" style="color: green;">Achievement - FreshCode</h3>
+      
+        <!-- _includes/left.html -->
 <div class="row g-5 mb-5">
     <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: underline; font-style: italic;">
     <h4>프레시코드 서비스 CLOVER</font></h4>          <!-- YAML의 name 필드 -->
@@ -491,15 +707,19 @@
 </ul>
       <!-- YAML의 version 필드 --></div>
 </div>
-        
+      
     </div>
-</div>
-        <!-- 주요 성과 - 넥스파시스템 -->
-        <div class="row g-5 mb-5">
+  </div>
+  
+
+  
+  
+  
+  <div class="row g-5 mb-5">
     <div>
-        <h3 class="fw-bold border-bottom pb-3 mb-5" style="color: blue;">Achievement - Nexpa System</h3>
-        
-            <!-- _includes/left.html -->
+      <h3 class="fw-bold border-bottom pb-3 mb-5" style="color: blue;">Achievement - Nexpa System</h3>
+      
+        <!-- _includes/left.html -->
 <div class="row g-5 mb-5">
     <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: underline; font-style: italic;">
     <h4>주차유도 솔루션 클라우드 전환</h4>          <!-- YAML의 name 필드 -->
@@ -538,8 +758,8 @@
 </ul>
       <!-- YAML의 version 필드 --></div>
 </div>
-        
-            <!-- _includes/left.html -->
+      
+        <!-- _includes/left.html -->
 <div class="row g-5 mb-5">
     <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: underline; font-style: italic;">
     <h4>SKT 주차장별 주차 현황 데이터 서버</h4>          <!-- YAML의 name 필드 -->
@@ -568,8 +788,8 @@
 </ul>
       <!-- YAML의 version 필드 --></div>
 </div>
-        
-            <!-- _includes/left.html -->
+      
+        <!-- _includes/left.html -->
 <div class="row g-5 mb-5">
     <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: underline; font-style: italic;">
     <h4>통합장애알람 솔루션 개발</h4>          <!-- YAML의 name 필드 -->
@@ -606,8 +826,8 @@
 </ul>
       <!-- YAML의 version 필드 --></div>
 </div>
-        
-            <!-- _includes/left.html -->
+      
+        <!-- _includes/left.html -->
 <div class="row g-5 mb-5">
     <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: underline; font-style: italic;">
     <h4>VDI 솔루션 개발</h4>          <!-- YAML의 name 필드 -->
@@ -644,8 +864,8 @@
 </ul>
       <!-- YAML의 version 필드 --></div>
 </div>
-        
-            <!-- _includes/left.html -->
+      
+        <!-- _includes/left.html -->
 <div class="row g-5 mb-5">
     <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: underline; font-style: italic;">
     <h4>NPCloudUploader</h4>          <!-- YAML의 name 필드 -->
@@ -676,8 +896,8 @@
 </ul>
       <!-- YAML의 version 필드 --></div>
 </div>
-        
-            <!-- _includes/left.html -->
+      
+        <!-- _includes/left.html -->
 <div class="row g-5 mb-5">
     <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: underline; font-style: italic;">
     <h4>nxLPRTest</h4>          <!-- YAML의 name 필드 -->
@@ -712,8 +932,8 @@
 </ul>
       <!-- YAML의 version 필드 --></div>
 </div>
-        
-            <!-- _includes/left.html -->
+      
+        <!-- _includes/left.html -->
 <div class="row g-5 mb-5">
     <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: underline; font-style: italic;">
     <h4>NPSettingManager</h4>          <!-- YAML의 name 필드 -->
@@ -748,9 +968,12 @@
 </ul>
       <!-- YAML의 version 필드 --></div>
 </div>
-        
+      
     </div>
-</div>
+  </div>
+  
+
+
         <!-- 주요 성과 - 외 -->
         <div class="row g-5 mb-5">
     <div>
@@ -820,6 +1043,10 @@
     <div class="col-md-12">
         <h3 class="fw-bold border-bottom pb-3 mb-5">Updates</h3>
         
+            <p><mark>2026. 03. 21</mark> - 플레이스앤 UMS 프로젝트 추가, Architecture Diagram 자체 호스팅(drawio) 전환, 섹션명 변경</p>
+        
+            <p><mark>2026. 03. 17</mark> - 플레이스앤(나우웨이팅) 경력/성과 추가, PDF 동기화 구조 개선, GitHub 유저네임 변경(kaynism)</p>
+        
             <p><mark>2025. 07. 05</mark> - pdf 링크 수정, [Architecture Diagram] 링크 변경</p>
         
             <p><mark>2025. 07. 01</mark> - 성과/트러블슈팅 구조 변경, /pdf2 링크 추가</p>
@@ -838,7 +1065,7 @@
         
             <p><mark>2023. 05. 24</mark> - 이력 수정, 위메프 퇴사</p>
         
-            <p><mark>2023. 05. 24</mark> - PDF 링크 추가, 제출용, kwan1989.github.io/pdf</p>
+            <p><mark>2023. 05. 24</mark> - PDF 링크 추가, 제출용, kaynism.github.io/pdf</p>
         
             <p><mark>2023. 05. 08</mark> - 피드백 수정, 신수웅(brewagebear) 님 감사해요!</p>
         

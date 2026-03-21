@@ -1,4 +1,38 @@
 - layout: left
+  name: 통합 메시지 플랫폼(UMS) 서비스 개발
+  link: /projects/placen-ums-architecture.html
+  description: |
+    * **2026.03 ~** (진행중)
+    * 사내 서비스(도도포인트, 나우웨이팅, CRM) 통합 멀티채널 메시징 플랫폼 설계 및 개발
+    * 6개 마이크로서비스 모듈 기반 이벤트 드리븐 아키텍처 (Kafka + Outbox 패턴)
+    * 지원 채널: SMS, LMS, MMS, Email, Push, BizTalk (벤더: UPlus MsgHub, AWS SES, Firebase FCM)
+  achievements: |
+    * **멀티모듈 이벤트 드리븐 아키텍처**: <b>6개 서버 모듈 + Kafka 기반 비동기 파이프라인, Outbox 패턴으로 메시지 유실 0건</b>
+    * **Redis Lua Guard 패턴**: <b>취소 확인 + 멱등성 + Rate Limit을 단일 RTT로 원자적 실행, 중복 발송률 0%</b>
+    * **Circuit Breaker + Fallback 라우팅**: <b>벤더별 장애 자동 차단(5회 실패 → OPEN) 및 대체 채널 Fallback, 향후 통신사 간 자동 전환(UPlus→KT 등) 확장 설계</b>
+    * **상태 머신 기반 메시지 추적**: <b>QUEUED→PENDING→SENT→SUCCESS/FAILED 전이 검증, 8개 테이블 + Flyway 스키마 관리</b>
+    * **멀티채널 통합 발송**: <b>7개 채널 × 3개 벤더 라우팅, 일일 대량 발송 + 예약 발송 지원</b>
+    * **모니터링 체계 구축**: <b>Micrometer 커스텀 메트릭 4종(처리 건수/벤더 레이턴시/서킷브레이커 트립/예약 처리) + Prometheus 연동</b>
+  troubleshooting: |
+    * **Transactional Outbox 패턴으로 메시지 유실 방지**
+      - 문제: 비즈니스 데이터 저장 후 Kafka 발행 실패 시 이벤트 유실 및 정합성 깨짐
+      - 해결: 단일 트랜잭션으로 비즈니스 데이터 + OutboxEvent 동시 저장, Batch 1분 폴링 릴레이 + DLQ 3회 재시도 후 격리로 At-Least-Once 보장
+    * **멀티채널 메시지 순서 보장**
+      - 문제: 동일 수신자에게 발송되는 메시지 간 순서가 보장되지 않아 상태 업데이트 역전 발생
+      - 해결: Kafka Partition Key를 수신자 기준(phoneNumber/email/deviceId)으로 설정하여 동일 수신자 메시지를 동일 파티션에 할당, 파티션 내 순서 보장
+    * **벤더 장애 시 대량 발송 실패 전파**
+      - 문제: 특정 벤더(UPlus) 장애 시 SMS/LMS/MMS 전체 발송 실패 누적
+      - 해결: 벤더별 Custom Circuit Breaker(CLOSED→OPEN→HALF_OPEN) + ChannelConfig 기반 Fallback 채널 자동 전환
+    * **동시 취소/발송 Race Condition**
+      - 문제: 관리자 취소 요청과 발송 처리가 동시 진행 시 취소된 메시지 발송
+      - 해결: Redis Lua 스크립트로 취소 플래그 확인 + 멱등성 + Rate Limit을 원자적 1 RTT로 처리
+  version: |
+    * Kotlin Version : <b>2.3.0</b>
+    * Spring Boot Version : <b>4.0.1 RELEASE</b>
+    * Java Version : <b>25</b>
+    * ETC. : <b>Kotlin, Spring Data(JPA, Redis), Spring Kafka(AWS MSK, Confluent 7.9.0), PostgreSQL, Redis Lua Script, Flyway, Micrometer/Prometheus, AWS(SES v2, S3), Firebase Admin SDK, SpringDoc OpenAPI, Docker</b>
+
+- layout: left
   name: 물류웨이팅
   description: |
     * 기존 나우웨이팅(F&B 매장 웨이팅) 서비스를 물류센터(쿠팡물류센터 등) 향으로 도메인 확장
