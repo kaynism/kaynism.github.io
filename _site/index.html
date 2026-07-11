@@ -195,30 +195,156 @@
         <!-- _includes/left.html -->
 <div class="row g-5 mb-5">
     <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: underline; font-style: italic;">
+    <h4>나우웨이팅 리엔지니어링</h4>          <!-- YAML의 name 필드 -->
+    </div>
+    <p style="display: flex; justify-content: center; align-items: center; margin-top: -5px;"></p>
+    <div class="col-md-10 " style="margin-top: 10px;">
+<!----><h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>  <!-- YAML의 quote 필드 -->
+        <ul>
+  <li><strong>2026.06 ~</strong> (진행중)</li>
+  <li>10년 이상 운영된 단일 레거시 시스템(Ruby on Rails)의 전면 재설계 — CTO 주도 아키텍처 하에 <strong>코어 도메인 모델링 리딩</strong> 담당</li>
+  <li>포탈(점주 전용 플랫폼)·허브(사내 운영팀 전용 플랫폼)라는 신규 개념을 도입하고, 두 플랫폼에 코어 기능을 직접 제공하는 코어 도메인 서버(spot/waiting)를 분리한 멀티모듈 아키텍처 (Kotlin/Spring Boot 4)</li>
+  <li>코어 도메인 서버의 모델 설계와 포탈·허브에 제공되는 코어 기능 구현을 직접 담당</li>
+  <li>B2C 인증 단일책임 서버(auth) 분리 — 도메인 서버 앞단 인증 + Istio 서비스메시 신원 전파, 도메인 서버는 자체 인증 없이 헤더 신뢰</li>
+  <li>10년간 누적된 레거시 운영 부채(CS 유발 도메인 정책, 영업일자·시간대 처리, 감사 이력 부재 등)를 재설계 과정에서 하나씩 해소</li>
+</ul>
+<!--        <ul>
+  <li><strong>2026.06 ~</strong> (진행중)</li>
+  <li>10년 이상 운영된 단일 레거시 시스템(Ruby on Rails)의 전면 재설계 — CTO 주도 아키텍처 하에 <strong>코어 도메인 모델링 리딩</strong> 담당</li>
+  <li>포탈(점주 전용 플랫폼)·허브(사내 운영팀 전용 플랫폼)라는 신규 개념을 도입하고, 두 플랫폼에 코어 기능을 직접 제공하는 코어 도메인 서버(spot/waiting)를 분리한 멀티모듈 아키텍처 (Kotlin/Spring Boot 4)</li>
+  <li>코어 도메인 서버의 모델 설계와 포탈·허브에 제공되는 코어 기능 구현을 직접 담당</li>
+  <li>B2C 인증 단일책임 서버(auth) 분리 — 도메인 서버 앞단 인증 + Istio 서비스메시 신원 전파, 도메인 서버는 자체 인증 없이 헤더 신뢰</li>
+  <li>10년간 누적된 레거시 운영 부채(CS 유발 도메인 정책, 영업일자·시간대 처리, 감사 이력 부재 등)를 재설계 과정에서 하나씩 해소</li>
+</ul>
+  &lt;!&ndash; YAML의 description 필드 &ndash;&gt;--><h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
+        <ul>
+  <li><strong>모듈러 모놀리스 채택 논거 주도</strong>: <b>MSA 전환 권고에 대해 “도메인 간 트래픽 동반 증가로 정밀 확장 이득 없음 + 즉시 일관성 요구” 기술 반박 문서를 작성, 아키텍처 방향 결정에 기여</b></li>
+  <li><strong>모듈 간 통신 단순화</strong>: <b>Feign/interface 모듈 없이 Istio 기반 직접 HTTP 통신, 인프라 모듈은 redis/kafka로 분할하여 필요한 서버만 선택 의존</b></li>
+  <li><strong>이벤트 소싱 기반 상태 히스토리</strong>: <b>운영모드 전환 등 상태 변경을 이벤트 SSOT로 기록, 조회 서버는 Command 0개의 순수 조회 유지로 단일 Writer 보장</b></li>
+  <li><strong>범용 감사 로그 설계</strong>: <b>domain/entity_id/changes 구조의 공용 audit_log + Hibernate 리스너 자동 캡처로 도메인 코드 오염 없이 변경 추적</b></li>
+  <li><strong>통합테스트 검증 표준 수립</strong>: <b>스토리마다 Docker 기반 컨텍스트 로드/영속 검증을 필수화 — 단위테스트로 잡히지 않는 빈(Bean) 구성 누락을 머지 전 차단</b></li>
+  <li><strong>Spring Boot 4 얼리어답팅</strong>: <b>Jackson 3(tools.jackson) 전환, Resilience4j 미지원 구간은 RestClient 기반 폴백으로 우회</b></li>
+  <li><strong>레거시 CS 유발 정책 재설계</strong>: <b>외부 파트너 QA에서 반복 지적된 영업상태 자동 전환 정책·일시중지(PAUSE) 남용 등 레거시 도메인 정책을 리엔지니어링 범위에서 재설계</b></li>
+  <li><strong>히스토리 도메인 일원화</strong>: <b>웨이팅 이력·운영모드 전환 이력을 동형 이벤트 모델로 통일, 감사(audit)와 사용자용 히스토리를 분리해 목적별 저장소 설계</b></li>
+</ul>
+<h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
+        <ul>
+  <li><strong>클러스터·비즈니스별로 파편화된 인증 체계 통합</strong>
+    <ul>
+      <li>문제: K8s 클러스터별로 분리된 서버들과 사용자군별(B2C 고객 / 점주 포탈 / 운영팀 허브) 인증 요구가 서로 달라, 레거시처럼 각 서버가 자체 인증을 중복 구현하면 정책 변경마다 전 서버 수정이 필요한 구조</li>
+      <li>해결: B2C 인증 단일책임 서버(auth)를 도메인 서버 앞단에 배치하고 Istio 서비스메시로 신원을 전파, 코어 도메인 서버(spot/waiting)는 인증 로직 없이 검증된 헤더만 신뢰하도록 책임 분리</li>
+    </ul>
+  </li>
+  <li><strong>순서 미루기 × 사전 알림의 도메인 상호작용</strong>
+    <ul>
+      <li>문제: 신규 기능인 “순서 미루기”와 “입장 N팀 전 사전 알림”이 결합되면, 미루기 시점에 이미 발송된 알림이 무효화되거나 재정렬된 대기열 기준으로 알림이 중복/누락되는 케이스가 발생</li>
+      <li>해결: 대기열 순서를 이벤트 기반으로 재계산하고 알림 발송 조건을 순번 스냅샷이 아닌 현재 대기열 상태 기준으로 판정하도록 설계</li>
+    </ul>
+  </li>
+</ul>
+<h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+        <ul>
+  <li>Kotlin Version : <b>2.3.x</b></li>
+  <li>Spring Boot Version : <b>4.0.6</b></li>
+  <li>Java Version : <b>25</b></li>
+  <li>ETC. : <b>Spring Data JPA, QueryDSL, PostgreSQL, Redis, Kafka, Istio, AWS(EKS, S3, IRSA), ArgoCD, Kustomize, External Secrets Operator, Docker, TestContainers</b></li>
+</ul>
+      <!-- YAML의 version 필드 --></div>
+</div>
+      
+        <!-- _includes/left.html -->
+<div class="row g-5 mb-5">
+    <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: underline; font-style: italic;">
+    <h4>네이버 스마트플레이스 줄서기 연동</h4>          <!-- YAML의 name 필드 -->
+    </div>
+    <p style="display: flex; justify-content: center; align-items: center; margin-top: -5px;"></p>
+    <div class="col-md-10 " style="margin-top: 10px;">
+<!----><h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>  <!-- YAML의 quote 필드 -->
+        <ul>
+  <li><strong>2026.05 ~ 2026.06</strong></li>
+  <li>나우웨이팅 웨이팅 서비스와 네이버 스마트플레이스 ‘줄서기’의 연동 설계 및 개발 (push 동기화 + pull 대사 기반)</li>
+  <li>네이버 PBP(Place Business Platform) API 기반 매장 운영정보 송신 + 네이버 유입 웨이팅 수신 파이프라인 구축</li>
+  <li>사업주 네이버 아이디 로그인(네아로) 기반 매장 매핑 CRUD 어드민 신규 구축</li>
+</ul>
+<!--        <ul>
+  <li><strong>2026.05 ~ 2026.06</strong></li>
+  <li>나우웨이팅 웨이팅 서비스와 네이버 스마트플레이스 ‘줄서기’의 연동 설계 및 개발 (push 동기화 + pull 대사 기반)</li>
+  <li>네이버 PBP(Place Business Platform) API 기반 매장 운영정보 송신 + 네이버 유입 웨이팅 수신 파이프라인 구축</li>
+  <li>사업주 네이버 아이디 로그인(네아로) 기반 매장 매핑 CRUD 어드민 신규 구축</li>
+</ul>
+  &lt;!&ndash; YAML의 description 필드 &ndash;&gt;--><h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
+        <ul>
+  <li><strong>외부 파트너 연동 스펙 설계 리드</strong>: <b>나우웨이팅 4개 운영모드 × 네이버 PBP 상태 필드 매핑표를 직접 설계·확정, 스펙 공백 2건(미설정 구간, 상태-사유 불일치)을 선제 발굴하여 정책 결정 주도</b></li>
+  <li><strong>준실시간 운영정보 Push 파이프라인</strong>: <b>변경 매장만 골라 5초 주기 묶음 전송(Dirty Set 폴링) + AWS EventBridge 1분 제약을 sub-loop 12회로 우회한 5초 스케줄링</b></li>
+  <li><strong>크로스-조직 장애 디버깅</strong>: <b>파트너 배치의 파라미터 직렬화 방식과 Rack 파싱 규칙 충돌로 연동 데이터가 배치 주기마다 초기화되던 장애를 초 단위 로그 교차대조로 격리, 파트너 측 무변경으로 3가지 직렬화 형식 모두 수용하도록 수정하여 오픈 일정 사수</b></li>
+  <li><strong>QA 대응 리드타임 최소화</strong>: <b>파트너 QA 지적 결함 대부분을 당일~2일 내 수정·배포·검증 완료, 오픈 전날 데이터 이격 건은 하루 2회 배포 + 실시간 협의로 당일 해소</b></li>
+  <li><strong>유입 채널(source) 무결성 설계</strong>: <b>서버가 내려주는 URL을 SSOT로 채널 식별 파라미터를 통제, 네이버 유입 시 네아로 단일 로그인 노출</b></li>
+  <li><strong>예상대기시간 실측 전송</strong>: <b>팀당 10분 고정 방식을 매장 어드민 실측값 위임으로 전환, 대기 0팀 시 필드 미전송 등 노출 정책 협의 반영</b></li>
+  <li><strong>이종 플랫폼 계정 통합</strong>: <b>카카오↔네이버 가입 고객을 전화번호 기준으로 머지, 채널 간 웨이팅 이력 단일화</b></li>
+</ul>
+<h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
+        <ul>
+  <li><strong>연동 매장 데이터 주기적 초기화 장애</strong>
+    <ul>
+      <li>문제: 파트너 대사(pull) 배치 호출 시 N건 조회 요청이 1건만 처리되어, “응답 누락 매장은 삭제” 정책과 결합해 연동 데이터가 배치 주기마다 초기화</li>
+      <li>해결: 초 단위 전송 로그 교차대조로 “repeated query param을 Rack이 마지막 값으로 덮어쓰는” 근본원인을 재현·격리, 파트너 공통 배치 무변경 원칙으로 자사 서버가 repeated/배열/콤마 3형식을 모두 수용하도록 방어적 파싱 적용</li>
+    </ul>
+  </li>
+  <li><strong>운영모드 전환 시 전송 누락 (트리거 설계 결함)</strong>
+    <ul>
+      <li>문제: 모드 전환 자체에 전송 트리거가 없어 간접 트리거에 의존, 모바일 상태가 유지되는 전환은 이전 값이 고착되어 전송</li>
+      <li>해결: 로그 타임라인 대조로 규명 후 모드 전환·매핑 생성 직후·시간 기반 전이(영업 시작/종료)까지 전송 트리거로 직접 등록, 트리거 전수 점검으로 잠재 누락 2건 추가 선발견</li>
+    </ul>
+  </li>
+  <li><strong>배치 직접 INSERT 데이터의 콜백 누락</strong>
+    <ul>
+      <li>문제: 배치 서버가 DB에 직접 INSERT한 영업상태 변경이 Rails 모델 콜백을 타지 않아 전송 누락</li>
+      <li>해결: 운영상태 스냅샷(operational_state)을 확장하여 폴링 시점 비교 기반 변경 감지로 전환, 콜백 의존 제거</li>
+    </ul>
+  </li>
+  <li><strong>어드민/웹 표시와 외부 전송 데이터의 채널 간 이격</strong>
+    <ul>
+      <li>문제: 영업상태 “미설정” 구간에서 어드민/웹 표시 규칙과 외부 전송 매핑이 서로 다르게 동작하여 파트너 QA에서 데이터 불일치 반복 지적</li>
+      <li>해결: 채널별 동작 차이를 케이스 매트릭스로 정리해 파트너와 매핑 정책 재협의, 오픈 전날 2회 배포로 “내부 상태 = 외부 전송” 단일 기준 확립</li>
+    </ul>
+  </li>
+</ul>
+<h5 class="fw-bold mt-4" style="color: #17a2b8;">⚙️ 기술 스택</h5>
+        <ul>
+  <li>ETC. : <b>Ruby on Rails(API), Sidekiq, Redis, PostgreSQL, AWS(EventBridge, Elastic Beanstalk), Naver PBP API, 네이버 아이디로 로그인(OAuth 2.0)</b></li>
+</ul>
+      <!-- YAML의 version 필드 --></div>
+</div>
+      
+        <!-- _includes/left.html -->
+<div class="row g-5 mb-5">
+    <div class="col-md-5" style="display: flex; justify-content: center; align-items: center; width: 100%; text-decoration: underline; font-style: italic;">
     <h4>통합 메시지 플랫폼(UMS) 서비스 개발</h4>          <!-- YAML의 name 필드 -->
     </div>
     <p style="display: flex; justify-content: center; align-items: center; margin-top: -5px;"><a href="/projects/placen-ums-architecture.html" target="_blank" style="color: #0066cc !important; text-decoration: underline; font-style: italic;">[ Architecture Diagram ]</a></p>
     <div class="col-md-10 " style="margin-top: 10px;">
 <!----><h5 class="fw-bold mt-4" style="color: #6f42c1;">🚀 설명</h5>  <!-- YAML의 quote 필드 -->
         <ul>
-  <li><strong>2026.03 ~</strong> (진행중)</li>
-  <li>사내 서비스(도도포인트, 나우웨이팅, CRM) 통합 멀티채널 메시징 플랫폼 설계 및 개발</li>
+  <li><strong>2026.03</strong> (TF, 1개월)</li>
+  <li>사내 서비스(도도포인트, 나우웨이팅, CRM) 통합 멀티채널 메시징 플랫폼 TF — 설계·구현·테스트 완료</li>
   <li>6개 마이크로서비스 모듈 기반 이벤트 드리븐 아키텍처 (Kafka + Outbox 패턴)</li>
   <li>지원 채널: SMS, LMS, MMS, Email, Push, BizTalk (벤더: UPlus MsgHub, AWS SES, Firebase FCM)</li>
+  <li>이후 타 프로젝트(네이버 줄서기 연동, 나우웨이팅 리엔지니어링) 우선순위로 운영 전환은 보류</li>
 </ul>
 <!--        <ul>
-  <li><strong>2026.03 ~</strong> (진행중)</li>
-  <li>사내 서비스(도도포인트, 나우웨이팅, CRM) 통합 멀티채널 메시징 플랫폼 설계 및 개발</li>
+  <li><strong>2026.03</strong> (TF, 1개월)</li>
+  <li>사내 서비스(도도포인트, 나우웨이팅, CRM) 통합 멀티채널 메시징 플랫폼 TF — 설계·구현·테스트 완료</li>
   <li>6개 마이크로서비스 모듈 기반 이벤트 드리븐 아키텍처 (Kafka + Outbox 패턴)</li>
   <li>지원 채널: SMS, LMS, MMS, Email, Push, BizTalk (벤더: UPlus MsgHub, AWS SES, Firebase FCM)</li>
+  <li>이후 타 프로젝트(네이버 줄서기 연동, 나우웨이팅 리엔지니어링) 우선순위로 운영 전환은 보류</li>
 </ul>
   &lt;!&ndash; YAML의 description 필드 &ndash;&gt;--><h5 class="fw-bold mt-4" style="color: #28a745;">📊 주요 성과</h5>
         <ul>
-  <li><strong>멀티모듈 이벤트 드리븐 아키텍처</strong>: <b>6개 서버 모듈 + Kafka 기반 비동기 파이프라인, Outbox 패턴으로 메시지 유실 0건</b></li>
-  <li><strong>Redis Lua Guard 패턴</strong>: <b>취소 확인 + 멱등성 + Rate Limit을 단일 RTT로 원자적 실행, 중복 발송률 0%</b></li>
+  <li><strong>멀티모듈 이벤트 드리븐 아키텍처</strong>: <b>6개 서버 모듈 + Kafka 기반 비동기 파이프라인, Outbox 패턴으로 메시지 유실 방지 (통합테스트 검증)</b></li>
+  <li><strong>Redis Lua Guard 패턴</strong>: <b>취소 확인 + 멱등성 + Rate Limit을 단일 RTT로 원자적 실행, 중복 발송 원천 차단 (동시성 테스트 검증)</b></li>
   <li><strong>Circuit Breaker + Fallback 라우팅</strong>: <b>벤더별 장애 자동 차단(5회 실패 → OPEN) 및 대체 채널 Fallback, 향후 통신사 간 자동 전환(UPlus→KT 등) 확장 설계</b></li>
   <li><strong>상태 머신 기반 메시지 추적</strong>: <b>QUEUED→PENDING→SENT→SUCCESS/FAILED 전이 검증, 8개 테이블 + Flyway 스키마 관리</b></li>
-  <li><strong>멀티채널 통합 발송</strong>: <b>7개 채널 × 3개 벤더 라우팅, 일일 대량 발송 + 예약 발송 지원</b></li>
+  <li><strong>멀티채널 통합 발송</strong>: <b>7개 채널 × 3개 벤더 라우팅, 대량 발송 + 예약 발송 구현</b></li>
   <li><strong>모니터링 체계 구축</strong>: <b>Micrometer 커스텀 메트릭 4종(처리 건수/벤더 레이턴시/서킷브레이커 트립/예약 처리) + Prometheus 연동</b></li>
 </ul>
 <h5 class="fw-bold mt-4" style="color: #dc3545;">🔧 트러블 슈팅</h5>
@@ -1042,6 +1168,8 @@
         <div class="row g-5 mb-5">
     <div class="col-md-12">
         <h3 class="fw-bold border-bottom pb-3 mb-5">Updates</h3>
+        
+            <p><mark>2026. 07. 11</mark> - 나우웨이팅 리엔지니어링(진행중)·네이버 스마트플레이스 줄서기 연동 추가, UMS TF 기간 명확화</p>
         
             <p><mark>2026. 03. 21</mark> - 플레이스앤 UMS 프로젝트 추가, Architecture Diagram 자체 호스팅(drawio) 전환, 섹션명 변경</p>
         
